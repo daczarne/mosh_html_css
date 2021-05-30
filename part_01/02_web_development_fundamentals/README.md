@@ -75,7 +75,7 @@ HTML is not a case sensitive language, so `<!DOCTYPE html>` is the same as `<!do
 
 After the doc-type declaration we need to add the `<html></html>` element. Everything that we put in side the HTML tag is part of the page. Most HTML elements will require an opening tag, like `<html>`, and a closing tag, like `</html>`. Everything in between this tags will become a child element of the `<html>` element. Convention is to indent child elements with one two-space tab.
 
-After the `<html>` element, we need to add two elements: `<head>`, and `<body>`. The `<head>` element will contain metadata about the web page, while the `<body>` element will contain all the elements that the user actually sees and interacts with. This two elements are the only two that we usually don't indent. In the `<head>` element we'll include things like the `<title>` and links to `css` styling sheets. The `<head>` will be displayed in the browser as the title of the tab.
+After the `<html>` element, we need to add two elements: `<head>`, and `<body>`. The `<head>` element will contain metadata about the web page, while the `<body>` element will contain all the elements that the user actually sees and interacts with. In the `<head>` element we'll include things like the `<title>` and links to `css` styling sheets. The `<head>` will be displayed in the browser as the title of the tab.
 
 ## CSS
 
