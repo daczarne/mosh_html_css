@@ -62,4 +62,4 @@ If you click on a request, you can see more details about it. In here we can see
 
 ![headers](img/02_headers.png)
 
-Under the **Preview** tab you can see a preview of the servers response (in this case, the home page for Google).
+Under the **Preview** tab you can see a preview of the servers response (in this case, the home page for Google). You can use the filter to search of only specific types of requests (like doc requests, or font requests, etc.).
