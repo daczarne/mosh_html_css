@@ -49,7 +49,11 @@ Content-Type: text/html
 
 The first line shows the version of HTTP used followed by a status code. `200 OK` means that the message was successfully received. Then in the second line comes the date and time of the response. The third line tells the client what type of content it's sending. After that comes the actual content.
 
-Once the browser gets the content of the message, it will construct a **DOM** (*Document Object Model*). This is just a tree that represent the elements in the HTML document. As the browser is reading the document and building the DOM, it will discover references to other resources (like images, videos, etc). For each resource that it discovers, it will send an HTTP request to the server asking for the resource to be fetched. Many of the requests are sent in parallel so that the page loads faster.
+Once the browser gets the content of the message, it will construct a **DOM** (*Document Object Model*). This is just a tree that represent the elements in the HTML document.
+
+![dom](img/03_dom.png)
+
+As the browser is reading the document and building the DOM, it will discover references to other resources (like images, videos, etc). For each resource that it discovers, it will send an HTTP request to the server asking for the resource to be fetched. Many of the requests are sent in parallel so that the page loads faster.
 
 Once the client has all the necessary resources, it will **Render** (display) the HTML document to the user.
 
