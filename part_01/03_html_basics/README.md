@@ -57,6 +57,7 @@ Other common entities include:
 - `&copy;` for the copyright symbol
 - `&nbsp;` for the non-breaking space
 - `&commat;` for adding an at (`@`)
+- `&amp;` for adding an ampersand (`&`)
 
 The complete list can be found [here](https://dev.w3.org/html5/html-author/charref).
 
