@@ -64,6 +64,7 @@ The complete list can be found [here](https://dev.w3.org/html5/html-author/charr
 ## Hyperlinks
 
 > **Hyperlink:** an element the user can interact with (generally, by clicking on it)
+
 > **Link:** the address or URL of a resource
 
 Hyperlinks are created with the anchor tag: `<a>`. The link to which it must point is supplied via the `href` attribute by passing the URL. The URL can be relative or absolute. To go one level up in a relative URL use `../`. Absolute URLs start at the root of the project and need to start with `/`.
