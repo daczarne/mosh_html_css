@@ -49,3 +49,17 @@ The first line shows the version of HTTP used followed by a status code. `200 OK
 Once the browser gets the content of the message, it will construct a **DOM** (*Document Object Model*). This is just a tree that represent the elements in the HTML document. As the browser is reading the document and building the DOM, it will discover references to other resources (like images, videos, etc). For each resource that it discovers, it will send an HTTP request to the server asking for the resource to be fetched. Many of the requests are sent in parallel so that the page loads faster.
 
 Once the client has all the necessary resources, it will **Render** (display) the HTML document to the user.
+
+## Requests and Responses
+
+You can inspect all requests and responses sent between client and server in the **Network** tab of the DevTools. You should see something like this:
+
+![dev tools](img/01_devtools.png)
+
+The network tab lists all the requests that were sent from the browser. At the bottom of the devtools you can see the total number of requests (in this case 81), as well as the total amount of data transferred over the network (86.9 kB). For each element in the list, the DevTools displays the name, the status, the total data transferred, the amount of time it took to get a response.
+
+If you click on a request, you can see more details about it. In here we can see all the **Headers** of the request like the *Request URL*, *Request Method*, *Status Code*, *Remote Address* (the numeric representation of the URL), etc. After that we can see the **Response Headers** (i.e. what the server sent back).
+
+![headers](img/02_headers.png)
+
+Under the **Preview** tab you can see a preview of the servers response (in this case, the home page for Google).
