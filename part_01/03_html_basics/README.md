@@ -63,6 +63,35 @@ The complete list can be found [here](https://dev.w3.org/html5/html-author/charr
 
 ## Hyperlinks
 
+> **Hyperlink:** an element the user can interact with (generally, by clicking on it)
+> **Link:** the address or URL of a resource
+
+Hyperlinks are created with the anchor tag: `<a>`. The link to which it must point is supplied via the `href` attribute by passing the URL. The URL can be relative or absolute. To go one level up in a relative URL use `../`. Absolute URLs start at the root of the project and need to start with `/`.
+
+Apart from the anchor itself we need to add a text or image that the user can click on. To add and image use the `<img>` tag.
+
+We can link to other resources like images too. If we want to user to download the resource (instead of it being displayed on the page) we use the `download` attribute. This attribute does not have a value.
+
+Hyperlinks can also link to other parts of the page. To do so, we create an anchor who's `href` attribute set to the ID of the element we want to link.
+
+``` html
+<a href="#element-id">Display text</a>
+```
+
+With this we can also link to the top of the page by using an "empty" `href`:
+
+``` html
+<a href="#">Jump to top</a>
+```
+
+When linking to external webpages we just need to pass the URL of the page, starting with the protocol (generally, `https://`). When doing so, we generally make the link open in a separate tab or window since we don't want the user to leave our page. To do so we set the `target` attribute to `_blank`.
+
+``` html
+<a href="https://google.com" target="_blank">Google</a>
+```
+
+Lastly, to link to emails we just need to pass `mailto:email@address.com` to the `href` attribute. When the user clicks on it, his/hers mail client will open with the `to:` field populated to the email address that we specify.
+
 ## Images
 
 ## Video and audio
