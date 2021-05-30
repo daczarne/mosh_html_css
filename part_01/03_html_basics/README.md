@@ -50,6 +50,15 @@ There are six levels of heading in HTML, from `<h1>` to `<h6>`. The style of the
 
 ## Entities
 
+Some characters are reserved in HTML (as with any other language) and need to be escaped. To do so, we use HTML-entities. All entities start with an ampersand (`&`) and end with a semi-colon (`;`). Each entity is then represented with a character sequence. For example, an less-than sign is `&lt;`, or greater-than sign is `&gt;`.
+
+Other common entities include:
+
+- `&copy;` for the copyright symbol
+- `&nbsp;` for the non-breaking space
+- `&commat;` for adding an at (`@`)
+
+The complete list can be found [here](https://dev.w3.org/html5/html-author/charref).
 
 ## Hyperlinks
 
