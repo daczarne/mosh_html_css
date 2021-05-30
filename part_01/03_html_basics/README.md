@@ -44,7 +44,12 @@ The `description` meta will be displayed in search results when the page is list
 
 ## Text
 
+The most common element for working with text is the `<p>` (paragraph) element. To add emphasis to a word or sequence of words we wrap them in the `<em>` element. We can use CSS to define how the `<em>` tag should format our text. An other element for targeting text for special formatting is `<strong>`. By default it will display elements in bold, but this can also be modified with CSS.
+
+There are six levels of heading in HTML, from `<h1>` to `<h6>`. The style of the text can be changed with CSS therefore, h-tags should not be used based on their default style (for example, their size), but rather based on the importance of the heading itself, with `<h1>` representing the most important heading, and going down in importance from there. They should represent hierarchy. As such, every page should have one, and only one, `<h1>` heading (since there can only be one *most important heading*). Headings should appear as needed, but in order. For example, after the `<h1>` we should not jump to `<h4>`, but rather to `<h2>`, and change the style if needed.
+
 ## Entities
+
 
 ## Hyperlinks
 
