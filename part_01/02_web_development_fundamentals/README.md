@@ -3,6 +3,8 @@
 [Languages and tools of web development](#languages-and-tools-of-web-development)  
 [How the web works](#how-the-web-works)  
 [Requests and Responses](#requests-and-responses)  
+[HTML](#html)  
+[CSS](#css)  
 
 ## Languages and tools of web development
 
@@ -64,3 +66,40 @@ If you click on a request, you can see more details about it. In here we can see
 ![headers](img/02_headers.png)
 
 Under the **Preview** tab you can see a preview of the servers response (in this case, the home page for Google). You can use the filter to search of only specific types of requests (like doc requests, or font requests, etc.).
+
+## HTML
+
+By convention, `index.html` represents the homepage of websites. An HTML document must always start with the document declaration `<!DOCTYPE html>`. This will tell the browser that the document that it's receiving is an HTML5 document.
+
+HTML is not a case sensitive language, so `<!DOCTYPE html>` is the same as `<!doctype html>`. But the convention in the community is to type all elements with lowercase, except the doc-type declaration.
+
+After the doc-type declaration we need to add the `<html></html>` element. Everything that we put in side the HTML tag is part of the page. Most HTML elements will require an opening tag, like `<html>`, and a closing tag, like `</html>`. Everything in between this tags will become a child element of the `<html>` element. Convention is to indent child elements with one two-space tab.
+
+After the `<html>` element, we need to add two elements: `<head>`, and `<body>`. The `<head>` element will contain metadata about the web page, while the `<body>` element will contain all the elements that the user actually sees and interacts with. This two elements are the only two that we usually don't indent. In the `<head>` element we'll include things like the `<title>` and links to `css` styling sheets. The `<head>` will be displayed in the browser as the title of the tab.
+
+## CSS
+
+CSS can be included in the `<head>` using the `<style>` element. Each CSS block is called a **rule** and its composed of a series of `property: value` pairs called **declaration**. These rules tell the browser how a specific property of the HTML element should be rendered. We start each block by telling the browser which element the rules will target, and then write each rule in it's own line, ending each one with a semi-colon `;`.
+
+``` css
+img {
+  width: 100px;
+  border-radius: 50px;
+}
+```
+
+Each HTML element can be given a **class** and/or an **id**. This makes targeting them in CSS rules easier and allows us to have rules that don't target all elements of the same type, but rather the same class. The same is true for IDs, only that IDs must be unique. No two elements can have the same ID. An element can have multiple classes, but only one ID. In order to tell the browser that a certain rule needs to apply only to a specific class we start the rule not with the element type, but with the class name_
+
+``` css
+.username {
+  font-weight: bold;
+}
+```
+
+If instead we want to target an ID, we start the rule with the ID:
+
+``` css
+#mosh {
+  font-weight: bold;
+}
+```
