@@ -1,5 +1,8 @@
 # Web development fundamentals
 
+[Languages and tools of web development](#languages-and-tools-of-web-development)  
+[How the web works](#how-the-web-works)  
+
 ## Languages and tools of web development
 
 Every web site has two parts: a **front-end** and **back-end**. The front-end is what the user sees in the browser and interacts with. The back-end is everything that happens behind the scenes so that the web page can do what it does. Developers who build both front and back-end systems are called **full-stack** developers.
