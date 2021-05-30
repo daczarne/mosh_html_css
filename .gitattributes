@@ -1,0 +1,9 @@
+*.Rmd linguist-detectable
+*.md linguist-detectable
+*.md linguist-documentation=false
+*.sql linguist-detectable
+*.sql linguist-language=sql
+*.svg linguist-detectable
+*.yml linguist-detectable
+*.yaml linguist-detectable
+*.mako linguist-vendored
