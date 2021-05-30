@@ -2,6 +2,7 @@
 
 [Languages and tools of web development](#languages-and-tools-of-web-development)  
 [How the web works](#how-the-web-works)  
+[Requests and Responses](#requests-and-responses)  
 
 ## Languages and tools of web development
 
