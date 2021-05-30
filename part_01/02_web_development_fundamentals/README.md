@@ -5,6 +5,7 @@
 [Requests and Responses](#requests-and-responses)  
 [HTML](#html)  
 [CSS](#css)  
+[Validation](#validation)  
 
 ## Languages and tools of web development
 
@@ -83,7 +84,15 @@ After the `<html>` element, we need to add two elements: `<head>`, and `<body>`.
 
 ## CSS
 
-CSS can be included in the `<head>` using the `<style>` element. Each CSS block is called a **rule** and its composed of a series of `property: value` pairs called **declaration**. These rules tell the browser how a specific property of the HTML element should be rendered. We start each block by telling the browser which element the rules will target, and then write each rule in it's own line, ending each one with a semi-colon `;`.
+CSS can be included in the `<head>` using the `<style>` element or directly in the HTML elements using the `style` attribute. But both this options are discouraged. Instead we add a `<link />` element to the `<head>` with the `rel="stylesheet"` attribute and `href`-it to our `style.css` file. Like so:
+
+``` html
+<head>
+  <link rel="stylesheet" href="path_to_style.css" />
+</head>
+```
+
+Each CSS block is called a **rule** and its composed of a series of `property: value` pairs called **declaration**. These rules tell the browser how a specific property of the HTML element should be rendered. We start each block by telling the browser which element the rules will target, and then write each rule in it's own line, ending each one with a semi-colon `;`.
 
 ``` css
 img {
@@ -107,3 +116,7 @@ If instead we want to target an ID, we start the rule with the ID:
   font-weight: bold;
 }
 ```
+
+## Validation
+
+We can validate the HTML markup using the [W3 validator](https://validator.w3.org/). This will list the warnings and errors in our page. For CSS we use [Jigsaw](https://jigsaw.w3.org/css-validator/).
