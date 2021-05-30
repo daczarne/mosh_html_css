@@ -6,4 +6,4 @@
 ![github languages](https://img.shields.io/github/languages/count/daczarne/mosh_html_css)
 ![top language](https://img.shields.io/github/languages/top/daczarne/mosh_html_css)
 
-Link to course: [here](https://codewithmosh.com/courses).
+Link to course: [here](https://codewithmosh.com/p/the-ultimate-html-css).
