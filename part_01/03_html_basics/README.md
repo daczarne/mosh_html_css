@@ -95,9 +95,9 @@ Lastly, to link to emails we just need to pass `mailto:email@address.com` to the
 
 ## Images
 
-Placeholder images from [Unsplash.com](https://unsplash.com/).
+> Stock images from [Unsplash.com](https://unsplash.com/).
 
-To embed a local image in a page we use the `img` element and pass the path to the image in the `href` attribute. The `alt` attribute is used to pass a textual description of the image. This is important since it's what screen readers will read for sight impaired users. Additionally, search engines read this description to optimize results. Lastly, if for some reason the image can not be loaded (for example, due to a network connectivity issue), this text will be displayed in its place.
+To embed a local image in a page we use the `img` element and pass the path to the image in the `src` (source) attribute. The `alt` attribute is used to pass a textual description of the image. This is important since it's what screen readers will read for sight impaired users. Additionally, search engines read this description to optimize results. Lastly, if for some reason the image can not be loaded (for example, due to a network connectivity issue), this text will be displayed in its place.
 
 To re-size images we use CSS. If we use the `img` selector we will be formatting all images. In general, we'll want to give our images classes and apply formatting to the classes instead. In order to prevent image squashing we use the `object-fit` rule and set it to `cover`. This makes the image cover its containing box (re-sized but potentially cropped). The height and width of said box are determined by the `height` and `width` rules respectively.
 
@@ -110,6 +110,38 @@ img {
 ```
 
 ## Video and audio
+
+> Stock videos from [pexels.com](https://www.pexels.com/).
+
+To add videos to the webpage we use the `video` element tag. This element takes a `src` attribute to specify the URL to our video. As with any other HTML element, we can style it with CSS.
+
+To show the video control buttons (play, pause, etc.) we need to pass the `controls` attribute to the `video` element. This is a boolean attribute. Boolean attributes in HTML don't work by setting them to `true` or `false`. The presence of the boolean attribute represents its `true` state and the absence of the boolean attribute represents its `false` state. Therefore, 
+
+``` html
+<video controls src="path_to_file"></video>
+```
+
+and
+
+``` html
+<video controls="false" src="path_to_file"></video>
+```
+
+produce the same result, as the `controls` attribute is present in both of them (and thus the controls are displayed).
+
+Another boolean attributes that `video` elements can take is `autoplay`. As its name suggest, this will cause the video to autoplay as soon as the page is loaded.
+
+One last boolean attribute that is very useful is `loop`. This will cause the video to play in a loop.
+
+Unlike the `alt` attribute for images, when we want to provide a fallback text for videos we just provide it within the tags.
+
+``` html
+<video controls autoplay loop src="path_to_file">
+  Your browser does not support videos.
+</video>
+```
+
+The `audio` element tag works mostly like the `video` tag.
 
 ## Lists
 
