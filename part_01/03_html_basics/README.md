@@ -145,6 +145,29 @@ The `audio` element tag works mostly like the `video` tag.
 
 ## Lists
 
+In HTML we have three types of lists. `<ul>` generates **un-ordered lists**. These lists are by default displayed as vertical bullets, but this is controlled with CSS.
+
+``` css
+ul {
+  list-style-type: none;
+}
+```
+
+Lists can be nested inside of each other to form a hierarchy.
+
+`<ol>` is used to generate **ordered lists**. If the `<li>` elements in the list are changed their numbers change (but maintain the order in the list).
+
+`<dl>` is used to generate **description lists**. These are generally used for glossaries and meta-data. We don't use `<li>` elements with these lists. Instead we use the `<dt>` element to specify the *description term* (the word or phrase to the defined), and we use the `<dd>` element to specify the *descriptions details* (the word definition).
+
+``` html
+<dl>
+  <dt>HTML</dt>
+  <dd>Hypertext Markup Language</dd>
+  <dt>CSS</dt>
+  <dd>Cascading Style Sheets</dd>
+</dl>
+```
+
 ## Tables
 
 ## Containers
