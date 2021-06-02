@@ -170,6 +170,35 @@ Lists can be nested inside of each other to form a hierarchy.
 
 ## Tables
 
+Tables are created using several tags, all of which need to be children of the `<table>` element. The table is composed of rows, defined with the `<tr>` element. Inside each row we place table cells. Cells in the header row are called *header cells*, while cells in subsequent rows are called *data cells* (defined with the `<td>` element).
+
+To style the entire table border with CSS we use the `border` rule. We need to define three values: thickness, line style, and line color.
+
+``` css
+table {
+  border: 1px solid grey;
+}
+```
+
+Likewise, we need to style the cells with CSS. Instead of adding new declarations with the same rule, we can target multiple selectors.
+
+``` css
+table,
+td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+```
+
+The `border-collapse` rule controls whether the borders between neighbouring cells are collapsed or not.
+
+To define the header row we use the `<tr>` element (just as with any other row). But to define the header cells we use the `<th>` element.
+
+To control how many columns a cell will span we use the `colspan` attribute in the `<th>` or `<td>` elements.
+
+To help with SEO and screen readers we can define the heading (with the `<thead>` element) and the body (with the `<tbody>` element) of the table. Likewise, we can use the `<tfoot>` element to add a table footer.
+
 ## Containers
 
 ## Semantic elements
