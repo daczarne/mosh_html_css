@@ -16,3 +16,15 @@ video {
 ul {
   list-style-type: none;
 }
+
+table,
+td,
+th {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+tfoot {
+  text-align: left;
+}
