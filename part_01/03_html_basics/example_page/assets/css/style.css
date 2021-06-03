@@ -28,3 +28,12 @@ th {
 tfoot {
   text-align: left;
 }
+
+.product {
+  background-color: gold;
+  width: 300px;
+}
+
+.highlight {
+  background-color: yellow;
+}

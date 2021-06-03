@@ -201,6 +201,10 @@ To help with SEO and screen readers we can define the heading (with the `<thead>
 
 ## Containers
 
+Containers are in general defined with the `<div>` element. This element does not have any visual appearance by default, but we can use CSS to style it. We use `<div>`s to group content in the page. Div elements are **Block-level elements**. This means that by default, the div will take up all the space available in that row of content (if it's the only div, then it will take up the entire width of the page). They will also start in a new row.
+
+Another generic container element is the `<span>` element. This element is usually used for styling text. `<span>` elements are **inline elements** which means that they only take up the necessary space to wrap its content.
+
 ## Semantic elements
 
 ## Structuring a web page
