@@ -221,4 +221,51 @@ We use the `<time>` element to wrap time stamps. We can set its `datetime` attri
 
 ## Structuring a web page
 
-There are other semantic elements that help us better define the general structure of the page.
+There are other semantic elements that help us better define the general structure of the page. Almost all web pages have at least three building blocks: *header*, *main* content, and *footer*. We have semantic elements for all three of them. We can also define content side bars with the `<aside>` element.
+
+Inside the `<header>` it is common to have a navigation bar. We define this bars with the `<nav>` element (and build it with `<ul>`). We can also have `<nav>`s in the `<footer>` with things like social media links.
+
+In the `<main>` area we can define blocks on content using `<section>` elements. In general, each section will have an `<h2>` heading. Groups of content inside each `<section>` can be grouped using `<article>` elements.
+
+``` html
+<body>
+  <!-- Page header with nav bar -->
+  <header>
+    <nav>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content of the page -->
+  <main>
+    <section>
+      <h2></h2>
+      <article></article>
+      <article></article>
+    </section>
+    <section>
+      <h2></h2>
+      <article></article>
+      <article></article>
+    </section>
+  </main>
+
+  <!-- Side bar -->
+  <aside></aside>
+
+  <!-- Footer -->
+  <footer>
+    <nav>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+```
