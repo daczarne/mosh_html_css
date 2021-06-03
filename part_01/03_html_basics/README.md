@@ -207,4 +207,18 @@ Another generic container element is the `<span>` element. This element is usual
 
 ## Semantic elements
 
+HTML5 introduced semantic containers. This work just like `div`s and `span`s have have descriptive names like `<article>`, `<figure>`, `<mark>`, or `<time>`.
+
+An `<article>` is any independent, self-contained piece of content. The `<figure>` element has no visual characteristics, it's just a container for `<img>` elements. Inside the `<figure>` elements we can add a `<figcaption>` to add a caption to the image.
+
+`<mark>` elements are used for highlighting text (by default with a yellow background).
+
+We use the `<time>` element to wrap time stamps. We can set its `datetime` attribute to a machine readable time format to optimize search results. This datetime needs to follow the format `YYYY-MM-DD HH:MM:SS` with the time in 24 hrs format.
+
+``` html
+<time datetime="2021-05-06 17:00">May 6 2021 05:00pm</time>
+```
+
 ## Structuring a web page
+
+There are other semantic elements that help us better define the general structure of the page.
