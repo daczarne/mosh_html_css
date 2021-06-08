@@ -28,6 +28,80 @@ Different Browsers render HTML differently. To address this issue we use [Normal
 
 ## Basic selectors
 
+In CSS we can select elements for styling by: type (HTML tag), class, ID, or attributes. A selector is the first word of a CSS declaration (the one before the braces, `{}`). IDs must be unique. Only one element in the entire HTML document can have a given ID. Classes, on the other hand, can be re-used in multiple elements.
+
+``` css
+/* Selection by tag */
+HTMLelement {
+  rules: here;
+}
+```
+
+``` css
+/* Selection by ID */
+#elementID {
+  rules: here;
+}
+```
+
+``` css
+/* Selection by class */
+.className {
+  rules: here;
+}
+```
+
+We can also select based on attributes. To do so, we include the attribute in square brackets. If we want to select elements where the attribute is equal to a certain value, we pass that value.
+
+``` css
+/* Select all anchors with a target attribute */
+/* The value does not matter here */
+a[target] {
+  rules: here;
+}
+```
+
+``` css
+/* Select all anchors with its target attribute set to _blank */
+a[target="_blank"] {
+  rules: here;
+}
+```
+
+``` css
+/* Select all anchors with its href set to https://google.com */
+a[href="https://google.com"] {
+  rules: here;
+}
+```
+
+``` css
+/* Select all anchors with its href containing the word google */
+a[href*="google"] {
+  rules: here;
+}
+```
+
+``` css
+/* Select all anchors with its href starting with https */
+a[href^="https"] {
+  rules: here;
+}
+```
+
+``` css
+/* Select all anchors with its href ends with .com */
+a[href$=".com"] {
+  rules: here;
+}
+```
+
+``` css
+/* Select all anchors with its href starting with https and ending with .com */
+a[href^="https"][href$=".com"] {
+  rules: here;
+}
+```
 
 ## Relational selectors
 
