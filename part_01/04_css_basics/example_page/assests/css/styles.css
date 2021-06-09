@@ -49,3 +49,7 @@ a[href$=".com"] {
 a[href^="https"][href$=".com"] {
   color: orange;
 }
+
+#products p {
+  color: orange;
+}

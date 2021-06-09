@@ -105,6 +105,42 @@ a[href^="https"][href$=".com"] {
 
 ## Relational selectors
 
+We can also select elements based on their relationship to other elements. We can create descendant selectors like so
+
+```css
+#products p {
+  rules: here;
+}
+```
+
+This will apply all rules to all the `<p>` elements inside the element with id `products`. This includes `<p>` elements that have the `products` element as an ancestor, but not directly (parent). If we only want to target *child elements* (that is, direct descendants) then we need to add a greater than sign in between them, like so: 
+
+```css
+#products > p {
+  rules: here;
+}
+```
+
+To target direct siblings we use a plus sign, like so:
+
+```css
+#products + p {
+  rules: here;
+}
+```
+
+If instead of direct siblings we want to target all siblings of the `products` element, we use a tilde, like so:
+
+```css
+#products ~ p {
+  rules: here;
+}
+```
+
+Relational selectors have the advantage of enabling us to write cleaner markup, since we don't need to define that many classes and IDs. Nevertheless, they have two draw backs:
+
+- they are fragile, as they depend on the elements position on the DOM
+- they are not as fast as basic selectors
 
 ## Pseudo-class selectors
 
