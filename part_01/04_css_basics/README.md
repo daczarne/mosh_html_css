@@ -5,6 +5,7 @@
 [Basic selectors](#basic-selectors)  
 [Relational selectors](#relational-selectors)  
 [Pseudo-class selectors](#pseudo-class-selectors)  
+[Pseudo-element selectors](#pseudo-element-selectors)  
 [Selectors specificity](#selectors-specificity)  
 [Inheritance](#inheritance)  
 [Colors](#colors)  
@@ -144,19 +145,70 @@ Relational selectors have the advantage of enabling us to write cleaner markup, 
 
 ## Pseudo-class selectors
 
+Pseudo classes are not real classes, but classes that the browser assigns by default. For example, the first child element of any element can be selected with the pseudo-class `:first-child`. All pseudo-classes start with a colon, `:`.
+
+```css
+article :first-child {
+  rules: here;
+}
+```
+
+Another pseudo-class is `:first-of-type`. This will style all first occurrences of every type of element that is a descendent of the `<article>` element.
+
+```css
+article :first-of-type {
+  rules: here;
+}
+```
+
+We can prefix the pseudo-selector by the element that we want to style. So, for example:
+
+```css
+article p:first-of-type {
+  rules: here;
+}
+```
+
+will style only the first `<p>` element that is a direct descendant of every `<article>` element. Similarly to these two, we have `last-child` and `last-of-type`.
+
+Another option is to use the `nth-child()` selector. This can take one of three values as an argument: `even` (to target even-child elements), or `odd` (to target odd-child elements). For example,
+
+```css
+ul li:nth-child(odd) {
+  rules: here;
+}
+```
+
+will apply the rules to all odd `<li>` elements of all `<ul>` elements in the HTML document. The third possible value of the function is a formula. For example, `3n` will target every third element.
+
+We also have pseudo-classes to style links. For example, the pseudo-class selector `a:visited` allows us to style a link that the user has already clicked on. Likewise, we can use the `a:link` selector to style all `<a>` elements that are links.
+
+``` css
+a:visited,
+a:link {
+  rules: here;
+}
+```
+
+We can also use pseudo-class selectors to change styles on hover. For example, `a:hover` will style all `<a>` elements when the user hovers over them. When using the `:hover` pseudo-class selector, we should also use the `:focus` pseudo-class selector for when the user uses the keyboard.
+
+``` css
+a:hover,
+a:focus {
+  rules: here;
+}
+```
+
+## Pseudo-element selectors
 
 ## Selectors specificity
 
-
 ## Inheritance
-
 
 ## Colors
 
 ## Gradients
 
-
 ## Borders
 
 ## Shadows
-

@@ -53,3 +53,17 @@ a[href^="https"][href$=".com"] {
 #products p {
   color: orange;
 }
+
+ul li:nth-child(odd) {
+  color: deeppink;
+}
+
+a:visited,
+a:link {
+  color: dodgerblue;
+}
+
+a:hover,
+a:focus {
+  color: deeppink;
+}
