@@ -201,6 +201,46 @@ a:focus {
 
 ## Pseudo-element selectors
 
+We can use pseudo-element selectors to style a part of an element (like the first letter of a word or the first word of a paragraph). To targe pseudo-elements we use double-colon syntax.
+
+|    Selector    |              Use               | Syntax |
+| :------------: | :----------------------------: | :----: |
+| Pseudo-element |       Part of an element       |  `::`  |
+|  Pseudo-class  | Elements in a particular state |  `:`   |
+
+Some pseudo-elements include:
+
+```css
+/* First letter of a paragraph */
+p::first-letter {
+  rules:here;
+}
+
+/* First line of a paragraph */
+p::first-line {
+  rules: here;
+}
+
+/* All highlighted elements (like text or headings) */
+::selection {
+  rules: here;
+}
+```
+
+We can also use the pseudo-elements `::before` and `::after` to insert content before or after an element. These two pseudo-elements must always have a `content` rule defining what to insert (it can be `""` for not inserting anything). By default, these are in-line elements.
+
+```css
+p::before {
+  content: "here";
+  rules: here;
+}
+
+p::after {
+  content: "here";
+  rules: here;
+}
+```
+
 ## Selectors specificity
 
 ## Inheritance
