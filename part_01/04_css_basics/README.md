@@ -243,6 +243,36 @@ p::after {
 
 ## Selectors specificity
 
+Sometimes rules conflict with each other. Each selector has a specificity or weight. If multiple rules target the same element, the browser will apply the one that is most specific for that element.
+
+> ID selector > Class selector & Attribute selector > Element selector
+
+If two selector have the same specificity the one that comes last in the stylesheet will be applied. In VS Code, if you hover over the selector in your stylesheet, the specificity will be displayed. The three numbers represent the weight as `(ID, Class, Element)`.
+
+![](img/selector_specificity_01.png)
+
+If we don't want a rule to be overwritten, we add the `!important` keyword to it.
+
+```css
+h1 {
+  rule: here !important;
+}
+```
+
+But the use `!important` is discouraged because it makes code more difficult to maintain. A solution to this problem is to make a rule that is more specific by combining selectors.
+
+```css
+.class#ID {
+  rules: here;
+}
+
+element#ID {
+  rules: here;
+}
+```
+
+![](img/selector_specificity_02.png)
+
 ## Inheritance
 
 ## Colors
