@@ -439,4 +439,23 @@ We can use online tools that will generate the gradient for us and give us the C
 
 ## Borders
 
+The border property takes three values: `border-width`, `border-style`, and `border-color`.
+
+```css
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: dodgerblue;
+  border: 10px solid royalblue;
+}
+```
+
+The `border` property is a short-hand property. The values we supply will be applied to all sides. But we can style each border independently using `border-top`, `border-right`, `border-bottom`, and `border-left`. The order matters since the last property sill be applied.
+
+We can also use properties like `border-width` to specify the width of all borders. To it we'll need to supply 4 values that will control top, right, bottom, and left border widths, in that order. If we ignore one value (and supply only three), the browser will interpret them as being top, right, bottom, and apply to the left border the same value as to the right. If we supply only two values, the browser will interpret them as `top-and-bottom`, and `left-and-right`. Lastly, if we only supply one value the browser will apply that value to all borders.
+
+Similarly, we have `border-style` and `border-color`. The same rules apply here.
+
+Additionally, we can use the `border-radius` property to make the corners round. With this we can create shapes. You can read more about shapes in [this](https://css-tricks.com/the-shapes-of-css/) article.
+
 ## Shadows
