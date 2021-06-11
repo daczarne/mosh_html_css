@@ -315,6 +315,128 @@ We can easily pick colors by googling `color picker`. But VS Code and Chrome hav
 
 ## Gradients
 
+We use gradients to create transitions between two or more colors. Gradients are technically images. Therefore, we cannot use the `background-color` property. We need to use the `background-image` property (or its short, `background`). To create a gradient we call the `linear-gradient()` function and pass two colors as arguments.
+
+```css
+.box {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(dodgerblue, yellow);
+}
+```
+
+By default, the direction of the transition will be from top to bottom. To change it we need to supply the first argument to the function.
+
+```css
+.box {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    to right,
+    dodgerblue,
+    yellow
+  );
+}
+```
+
+We can also target corners.
+
+```css
+.box {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    to bottom right,
+    dodgerblue,
+    yellow
+  );
+}
+```
+
+We can also specify the direction using degrees (0 is center top, 90 is center right, 180 is center bottom, 270 is center left). For example, 45 degrees will cause the transition to go from the bottom left corner, to the upper right corner.
+
+```css
+.box {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    45deg,
+    dodgerblue,
+    yellow
+  );
+}
+```
+
+We can also specify the position of the colors. For example, we may want for `yellow` to start at 30% of the available space.
+
+```css
+.box {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    45deg,
+    dodgerblue,
+    yellow 30%
+  );
+}
+```
+
+We can also supply more than two colors:
+
+
+```css
+.box {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    45deg,
+    dodgerblue,
+    yellow 30%,
+    tomato
+  );
+}
+```
+
+We have another gradient called `radial-gradient`. This will cause colors to transition in a circular (or elliptical) fashion.
+
+```css
+.box {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(white, yellow);
+}
+```
+
+When the element is square, CSS will make the colors transition in a circular fashion, otherwise it will elliptical. But we can force it to be in circles by passing the `circle` argument.
+
+```css
+.box {
+  width: 600px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    white,
+    yellow
+  );
+}
+```
+
+We can change the position of the circle.
+
+```css
+.box {
+  width: 600px;
+  height: 200px;
+  background: radial-gradient(
+    circle at top left,
+    white,
+    yellow
+  );
+}
+```
+
+We can use online tools that will generate the gradient for us and give us the CSS code. One such tool is [CSS gradient](https://cssgradient.io/).
+
 ## Borders
 
 ## Shadows

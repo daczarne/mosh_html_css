@@ -1,0 +1,11 @@
+.box:nth-child(odd) {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(dodgerblue, yellow);
+}
+
+.box:nth-child(even) {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(white, yellow);
+}
