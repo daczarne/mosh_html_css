@@ -275,6 +275,33 @@ element#ID {
 
 ## Inheritance
 
+Some CSS properties inherit rules from their parents by default. If we don't want a property to be inherited, we need to set it to `initial`.
+
+```css
+p {
+  color: dodgerblue;
+}
+/* By default, the strong element will inherit the color property 
+from its parent p element */
+strong {
+  color: initial;
+}
+```
+
+Some other properties are not inherited. To make them be inherited, we set the property to `inherit`
+
+```css
+p {
+  border: 1px solid pink;
+}
+/* By default, the border property is not inherited */
+strong {
+  border: inherit;
+}
+```
+
+Generally speaking, properties that are about typography get inherited.
+
 ## Colors
 
 ## Gradients
