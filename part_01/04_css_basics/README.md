@@ -304,6 +304,15 @@ Generally speaking, properties that are about typography get inherited.
 
 ## Colors
 
+In CSS there are four ways of representing colors:
+
+1. Named colors: some colors have names in CSS
+2. RGB or RGBA: Red, Green, Blue (Alpha channel)
+3. HSL or HSLA: Hue, Saturation, Lightness (Alpha channel)
+4. Hexadecimal values
+
+We can easily pick colors by googling `color picker`. But VS Code and Chrome have its own built-in color pickers.
+
 ## Gradients
 
 ## Borders
