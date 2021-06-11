@@ -459,3 +459,9 @@ Similarly, we have `border-style` and `border-color`. The same rules apply here.
 Additionally, we can use the `border-radius` property to make the corners round. With this we can create shapes. You can read more about shapes in [this](https://css-tricks.com/the-shapes-of-css/) article.
 
 ## Shadows
+
+We can add shadows around elements using the `box-shadow` property. The first value we have to supply is the horizontal distance from the shadow to the element. Positive values will move the shadow to the right, and a negative value will move the shadow to the left.
+
+The second value is the vertical distance from the shadow to the element. Positive values move the shadow up, and negative values will move the shadow down. The third value that we can pass specifies by how much we want to blur the shadow. We can also pass a color to the property to set the color of the shadow box.
+
+We can also add shadows to text. To do so we use the `text-shadow` property and we pass the same values as to the element shadow: `horizontal-offset`, `vertical-offset`, `blur`, and `color`.

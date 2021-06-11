@@ -1,0 +1,11 @@
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: dodgerblue;
+  box-shadow: 10px 10px 10px grey;
+}
+
+h1 {
+  color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
