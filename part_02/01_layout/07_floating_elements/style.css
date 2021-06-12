@@ -1,0 +1,21 @@
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  float: left;
+  margin-right: 0.5rem;
+}
+
+.tweet {
+  border: 3px solid lightgray;
+}
+
+.tweet::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clear {
+  clear: left;
+}

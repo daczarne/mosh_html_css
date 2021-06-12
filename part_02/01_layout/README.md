@@ -123,6 +123,24 @@ With `fixed` position we can position elements relative to the viewport. These e
 
 ## Floating elements
 
+We use the `float` property to build layouts. Setting the `float` property of an element to `left` cause that element to float to the left of its container. As a consequence, the subsequent elements will float around it.
+
+If we want to clear the floating of subsequent elements, we need to set the `clear` property to the same value as the `float` of the previous element. So, if we set `float: left;` in an element, then we need to set `clear: left;` in the sibling element that we want to prevent from floating. We can set `clear` to `both` to clear both floats.
+
+By default, parent elements don't see floated elements. This may cause **parent collapsing**. One way of solving this is to add an empty `<div>` at the end of the collapsed parent and set its `clear` property. The problem with this approach is that this `<div>` is not semantic. We can instead solve the problem by using pseudo-elements. We need to target the `::after` pseudo-element of the parent element that we want to avoid collapsing. This pseudo-element does not need content, but it does need to be changed to `display: block;` so that it becomes a block-level element, and we need to clear the float as well.
+
+```css
+.clear-fix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+```
+
+Another solution is to set the `overflow` property of the collapsed element to any value other than `visible`. But this might cause other problems with our layouts.
+
+Because of all this issues the use of floats is now discouraged over the use of FlexBox or Grid layouts.
+
 ## FlexBox
 
 ## Grid
