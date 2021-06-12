@@ -64,6 +64,63 @@ For `em` and `rem` keep in mind that if no parent element has a font size, the f
 
 ## Positioning
 
+### Static positioning
+
+By default, the `position` property of all elements is set to `static`, which means that it's not positioned, they appear exactly in their normal position.
+
+### Relative positioning
+
+If we set its position to `relative` we can position the element relative to its normal (`static`) position. Now we can use properties like `top`, `left`, `bottom`, and `right` to move the element around. For example, setting `left: 5rem;` will move the element 5 rem units to the right (because it will add 5rem units of space to its left). We can also use negative values to move the element the other way.
+
+Moving the elements around will sometimes cause overlapping. Which element will be displayed in front of which depends on the elements position in the DOM. The element that comes last in the DOM will appear in front of the elements that come before it in the DOM. We can modify this behavior by setting the `z-index` property. This property is by default set to 0, but we can change it to positive values to make elements come forward, or to a negative value to make elements move backwards.
+
+```css
+.boxes {
+  border: 3px solid lightgrey;
+}
+
+.box-two {
+  background-color: tomato;
+  position: relative;
+  left: 5rem;
+  bottom: 2rem;
+  z-index: 999;
+}
+```
+
+### Absolute positioning
+
+With absolute positioning we can position an element relevant to its container. To do so, we need to first set the position of the parent element to `relative`.
+
+```css
+.boxes {
+  border: 3px solid lightgrey;
+  position: relative;
+}
+
+.box-two {
+  background-color: tomato;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+```
+
+Whenever we position an element with an `absolute` positioning, that element is removed from the normal flow of the page. This means that other block-level elements that come after it will be pushed up. From the parent's point of view, that element does not exist.
+
+## Fixed
+
+With `fixed` position we can position elements relative to the viewport. These elements will never leave the viewport and will always be shown. This is very commonly used for things like nav-bars.
+
+```css
+.box-two {
+  background-color: tomato;
+  position: fixed;
+  top: 0;
+}
+```
+
 ## Floating elements
 
 ## FlexBox
