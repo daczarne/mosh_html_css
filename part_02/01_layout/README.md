@@ -217,6 +217,150 @@ All these properties should be applied to flex elements, not to their container.
 
 ## Grid
 
+### Building a grid
+
+We use Grid to layout elements in two dimensions. Just as with FlexBox, to build a Grid layout we need a container and its elements. In this container element we set the `display` property to `grid`, and then we use the `gird-template-rows` and `grid-template-columns` to define a template for rows and columns. To each of this properties we supply as many values (and units of measurement) as we want rows/columns to be there. If our columns or rows will have the same size, we can use the `repeat()` function and pass it a number of times to repeat and a size to be repeated.
+
+```css
+.container {
+  display: grid;
+  /* A 3 x 2 grid */
+  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(2, 100px);
+}
+```
+
+We can instead use the `grid-template` to specify a template for rows and a template for columns in one property. These values need to be separated with a forward slash, `/`.
+
+```css
+.container {
+  display: grid;
+  /* A 3 x 2 grid */
+  grid-template: repeat(3, 100px) / repeat(2, 100px);
+}
+```
+
+We can use the `width` and `height` properties to control the grid's size.
+
+### Element alignment
+
+By default, each element is aligned to the top left corner of its containing cell in the grid. To change alignment we use the following properties
+
+- `justify-items` for aligning along the horizontal axis
+- `align-items` for aligning along the vertical axis
+
+```css
+.container {
+  display: grid;
+  /* 3 x 2 */
+  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(2, 100px);
+  /* Align the items */
+  justify-items: center;
+  align-items: center;
+}
+```
+
+If we want to align the grid itself we use
+
+- `justify-content` to align the grid along the horizontal axis
+- `align-content` to align the grid along the vertical axis
+
+```css
+.container {
+  display: grid;
+  /* 3 x 2 */
+  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(2, 100px);
+  /* Align the items */
+  justify-items: center;
+  align-items: center;
+  /* Align the grid */
+  justify-content: center;
+  align-content: center;
+}
+```
+
+If we want the elements in the grid to take up as much space as possible, we need to remove the `height` and/or `width` properties from their rules. With this we can set the `justify-items` and/or `align-items` properties to other values, for example, `stretch`, and the content will take up all the available space in the cell.
+
+### Fractions
+
+When building grids sometimes a row or column needs to take up a fixed amount of space and we want to distribute the remaining viewport or grid space among the remaining rows or columns. Here is where the fraction unit comes in handy. We can also use the `auto` keyword for letting the browser figure it out.
+
+```css
+.container {
+  display: grid;
+  grid-template: 100px auto 100px / 100px 30fr 70fr;
+  height: 100vh;
+}
+```
+
+### Gaps
+
+If we want to leave space between the gird rows and/or column we use the *gap* properties (`gap`, `row-gap`, `column-gap`). If we use the short hand property, the values will be passed to row and columns respectively, or supply one value and the browser will repeat it.
+
+```css
+.container {
+  display: grid;
+  grid-template: 100px auto 100px / 100px 30fr 70fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  height: 100vh;
+}
+```
+
+### Placing items
+
+We have three properties to place elements in the grid: `grid-row`, `grid-column`, and `grid-area`. The last one is a short hand property for the first two (in that order). This properties need to be passed to items, not the container. This properties take numbers as their values and are filled from top-left to bottom-right by default. This numbers represent the row or columns lines where the item needs to start.
+
+If we want an element to take up more than one cell, we need to specify the start and end lines separated by a forward slash, `/`. We can also count backwards, with the value `-1` representing the last line. We can also use the `span` keyword to specify how many cells the element should span.
+
+```css
+.box-one {
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+}
+.box-two {
+  grid-column: 1 / span 2;
+}
+```
+
+The `grid-area` property takes four values separated by forward slashes that represent the `start - end`, in a `row / column` format. So, for example, `grid-area: 1 / 1 / 1 / 3` means that the element will start at row-one, column-one, and span all the way to row-one, column-three.
+
+### Named areas
+
+Another way of placing elements is by naming the areas using the `grid-template-areas` in the container element, and then assigning the `grid-area` property of each element to a particular cell name.
+
+```css
+.container {
+  display: grid;
+  grid-template: 100px auto 100px / 30fr 70fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+.box-one {
+  grid-area: header;
+}
+.box-four {
+  grid-area: footer
+}
+```
+
+If we want a cell to be an empty area we use a period, `.`, in the grid template.
+
+```css
+.container {
+  display: grid;
+  grid-template: 100px auto 100px / 30fr 70fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    ". footer";
+}
+```
+
 ## Hiding elements
 
 ## Media queries

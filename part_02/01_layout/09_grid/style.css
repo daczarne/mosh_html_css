@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  border: 3px solid lightgray;
+  /* 3 x 2 */
+  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(2, 100px);
+  /* Align the items */
+  justify-items: stretch;
+  align-items: stretch;
+  /* Align the grid */
+  justify-content: center;
+  align-content: center;
+}
+
+.box {
+  background-color: gold;
+}
+
+.box-one {
+  grid-column: 1 / 3;
+}
