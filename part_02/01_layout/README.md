@@ -46,6 +46,22 @@ The `overflow` property is a short hand for `overflow-x` and `overflow-y`. We ca
 
 ## Measurement units
 
+In CSS there are multiple units of measurement. They fall in either one of two categories: **absolute**, o **relative**. Absolute units are always fixed, while relative unites depend on something else. For example, percentages are relative to the size of the elements container (its parent element).
+
+|    Absolute     |       Relative       | Relative to ...                      |
+| :-------------: | :------------------: | :----------------------------------- |
+|   px (pixel)    |    % (percentage)    | the size of the container            |
+|   pt (point)    | vw (viewport width)  | the viewport                         |
+|    in (inch)    | vh (viewport height) | the viewport                         |
+| cm (centimeter) |          em          | the font size of the current element |
+| mm (millimeter) |         rem          | the font size of the root element    |
+
+`pt`, `in`, `cm`, and `mm` are mostly used for printing and have no real application for the web. We should use `px` when we don't want the size of something to change. With relative units, the size of our elements will change as the size of the element that determines their size changes.
+
+By default, block-level elements have a width of 100% and a height of 0%. If there's content inside the element, the height will increase to fit the content.
+
+For `em` and `rem` keep in mind that if no parent element has a font size, the font size of the `html` element will be used. By default, browsers give the `html` element a `font-size` of `16px`. So, a width of `10em` means 10 times the font size of the current element. On the other hand, `rem` will multiply based on the font size of the root element. This means that we don't have to trace back inheritance, the size will always be based on the `font-size` of the `html` element.
+
 ## Positioning
 
 ## Floating elements
