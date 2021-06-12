@@ -1,0 +1,26 @@
+.container {
+  border: 3px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 90vh;
+}
+
+.box {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  margin: 1rem;
+  flex-basis: 10rem;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.box-one {
+  align-self: flex-start;
+  flex-basis: 5rem;
+  flex-grow: 2;
+  flex-shrink: 1;
+}

@@ -143,6 +143,78 @@ Because of all this issues the use of floats is now discouraged over the use of 
 
 ## FlexBox
 
+### Elements layout
+
+FlexBox is used for laying out elements in one direction: `row` or `column`. To use FlexBox we need to set the `display` property to `flex`. The container element will still be a block-level element, but it will behave according to Flex rules in the inside. By default, the orientation will be `row`.
+
+We control the direction of elements with the `flex-direction` property. Default is `row`, but we can change it to `column`, `row-reverse`, or `column-reverse`.
+
+To align elements in Flex we need to understand the **axis**. FlexBox has two axes that depend of the `flex-direction` property:
+
+- **Main** will be the horizontal axis if the direction is row, or the vertical axis if the direction is column
+- **Cross** will be the vertical axis if the direction is row, or the horizontal axis if the direction is column
+
+![](img/flex_axes.png)
+
+We use two properties in order to vertically and horizontally align items in FlexBox:
+
+- `justify-content` is used to align items along the main axis
+- `align-items` is used to align items along the cross axis
+
+As we add more and more elements into the container, each element will become smaller and smaller while Flex tries to fix all elements in one row (or column). We can change this behavior using the `flex-wrap` property. Its default value is `nowrap`, but we can change it to `wrap` (amongst other possible values).
+
+Now we can use the `align-content` property to align multiple lines (or even the entire content as a whole).
+
+```css
+.container {
+  border: 3px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 90vh;
+}
+```
+
+After we have built the layout of the container, we can layout its child elements. We can use the `align-self` property to move a child element to a different position inside the space assigned for it by the container.
+
+``` css
+.box-one {
+  align-self: flex-start;
+}
+```
+
+### Elements sizing
+
+To size elements we use the following properties:
+
+- `flex-basis` is used to set the initial size of a flex element. If we set the direction to `row`, then this property will targe the `width` property of the element, and, if direction is set to `column`, it will target the `height` property.
+- `flex-grow` is used to set the growth factor of a flex element. The final size of elements is determined by adding all the growth factors and assigning each element the proportion of the available space that is equal to its contribution to the total growth factor.
+- `flex-shrink` is used to set the shrink factor of a flex element. Same as before, but for shrinking elements.
+- `flex` is a short hand property that combines all the previous ones (order is `flex-grow` `flex-shrink` `flex-basis`). If we supply a single value it will be used for the `flex-grow` property.
+
+All these properties should be applied to flex elements, not to their container.
+
+```css
+.box {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  margin: 1rem;
+  flex-basis: 10rem;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.box-one {
+  align-self: flex-start;
+  flex-basis: 5rem;
+  flex-grow: 2;
+  flex-shrink: 1;
+}
+```
+
 ## Grid
 
 ## Hiding elements
