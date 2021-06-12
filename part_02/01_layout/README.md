@@ -40,6 +40,10 @@ The `width` and `height` properties are only applied to block-level elements. In
 
 ## Overflowing
 
+Overflowing happens when the content of an elements doesn't fit inside the element. We can control it with the `overflow` property. By default, it's set to `visible`. If we change it to `hidden` the part of the content that overflows the container will not be seen. We can also set it to `scroll` to get a horizontal and vertical scroll bar in the container element. We can set the `overflow` property to `auto` to make the scroll bars only appear if there's overflow.
+
+The `overflow` property is a short hand for `overflow-x` and `overflow-y`. We can set them separately if we want the *x* and *y* axis to have different behaviors. Or, we can supply two values to the `overflow` property which the browser will apply to x and y respectively.
+
 ## Measurement units
 
 ## Positioning

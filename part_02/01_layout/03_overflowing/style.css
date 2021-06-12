@@ -1,0 +1,10 @@
+body {
+  margin: 10px;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  border: 3px solid gold;
+  overflow: scroll;
+}
