@@ -17,6 +17,11 @@ Whenever the browser renders an element it places it inside an invisible box. At
 
 ![](img/box_model.png)
 
+We can use the CSS property `padding` to control the padding. This property takes up to 4 values that work the same way as the border property seen before. The same holds for the `margin`. But keep in mind that the browser will collapse the margins of elements that are next to each other, while it will not collapse the padding. Therefore, to avoid issues:
+
+- use padding to separate the content and the border
+- use margin to separate elements from each other
+
 ## Sizing elements
 
 ## Overflowing
