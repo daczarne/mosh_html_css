@@ -1,0 +1,8 @@
+body {
+  height: 100vh;
+  background-image: url("../images/bg-sanfrancisco.jpg");
+  background-repeat: no-repeat;
+  background-position: 100px 100px;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}

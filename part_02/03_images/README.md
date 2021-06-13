@@ -40,6 +40,58 @@ By default, images are rendered at their real size. We can control the image siz
 
 ## Background images
 
+We can apply background images to elements. To do so, we can either use the `background` or `background-image` properties. We use the `url()` function to specify the path to the image.
+
+```css
+body {
+  background-image: url("../images/bg-paper.jpg");
+}
+```
+
+By default, the image will be repeated horizontally and vertically as many times as necessary to fill the viewport. This behavior is controlled by the `background-repeat` property. If we set it to `no-repeat` then the image will be shown once only at the top left corner. If we set it to `repeat-x` or `repeat-y` then the image will only be repeated along the horizontal or vertical axis respectively.
+
+```css
+body {
+  background-image: url("../images/bg-paper.jpg");
+  background-repeat: no-repeat;
+}
+```
+
+To control the position of the image we use the `background-position` property. We need to pass two values: `horizontal-adjustment` and `vertical-adjustment`. These values can be either positive or negative. A positive `horizontal-adjustment` will move the image to the right, and a negative to the left. Likewise, a positive `vertical-adjustment` value will move the image up, and a negative down. It's usually recommended to use relative units. For example, 100% will move the image to the opposite side of its parent container (along the respective axis).
+
+```css
+body {
+  background-image: url("../images/bg-paper.jpg");
+  background-repeat: no-repeat;
+  background-position: 100% -100%;
+}
+```
+
+To control the size of the image, we use the `background-size` property and supply two values: `width` and `height`. If we set a value to 100% is will take up all the space in its container. Be aware the if we set the image height to 100% for an empty block-level container, it will disappear. This is because, by default, the height of a block-level element is the necessary hight to accommodate it's content, and since the container is empty, its height is zero. If we want the image to be a cover image (cover the entire container will keeping its aspect ratio), we can set this property to `cover`.
+
+```css
+body {
+  height: 100vh;
+  background-image: url("../images/bg-paper@2x.jpg");
+  background-repeat: no-repeat;
+  background-position: 100px 100px;
+  background-size: cover;
+}
+```
+
+We can make our background image stay fixed (relative to the viewport) while the content is scrolled by setting the `background-attachment` property to `fixed`. With this, the image will only be expanded to fill 100% of the viewport and it will not be stretched that much (or at all, depending on the image).
+
+```css
+body {
+  height: 300vh;
+  background-image: url("../images/bg-sanfrancisco.jpg");
+  background-repeat: no-repeat;
+  background-position: 100px 100px;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+```
+
 ## CSS sprites
 
 ## Data URLs
