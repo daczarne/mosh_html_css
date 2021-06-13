@@ -2,7 +2,7 @@
 
 [Styling fonts](#styling-fonts)  
 [Embedding web fonts](#embedding-web-fonts)  
-[Flash or unstyled text](#flash-or-unstyled-text)  
+[Flash of unstyled text](#flash-of-unstyled-text)  
 [Font service](#font-services)  
 [System font stack](#system-font-stack)  
 [Sizing fonts](#sizing-fonts)  
@@ -81,7 +81,7 @@ body {
 }
 ```
 
-## Flash or unstyled text (FOUT)
+## Flash of unstyled text (FOUT)
 
 FOUT is a problem that users may encounter with our web sites assets if they are on a slow connection. Assets like fonts may take a long time to download and be installed on the users computer. While this is happening the browser will fallback to another font in the font-stack and this might cause some elements to not render correctly. We cannot fully avoid this problem. But we can use the `font-display` property in our `@font-face` declaration rule to minimize the problem.
 
@@ -110,6 +110,15 @@ The link URL has the query parameter `display=swap`. We can change this paramete
 ```
 
 ## System font stack
+
+With this stack we can tell the browser to use the default font of the users operating system. This can boost performance since no fonts need to be downloaded and mitigates the probability of having FOUT. The problem is that different OS use different default fonts. To use the system font stack we just pass it as the value of the `font-family` property.
+
+```css
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+```
 
 ## Sizing fonts
 
