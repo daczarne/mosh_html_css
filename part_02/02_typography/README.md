@@ -7,6 +7,7 @@
 [System font stack](#system-font-stack)  
 [Sizing fonts](#sizing-fonts)  
 [Vertical spacing](#vertical-spacing)  
+[Horizontal spacing](#horizontal-spacing)  
 [Formatting text](#formatting-text)  
 
 ## Styling fonts
@@ -122,6 +123,40 @@ body {
 
 ## Sizing fonts
 
+We should not set font sizes in pixels because they vary between devices. In general, the main text of our page should be set to `1rem`. That means, one time the size of the font of the root element (the `<html>` element). If we don't have a CSS rule for the `html` element, the size will be set by the user's browser. This is usually set in the `body` rule.
+
+```css
+body {
+  margin: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+}
+```
+
+We can then change the size of different elements as needed. For example, we can make our headings larger.
+
+```css
+h1 {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+}
+```
+
+Since we are using a mobile first approach, this will be the values for mobile devices. For tablets and desktops, we want to use a media query to make them larger still. Because we are using relative font sizes, we only need to change the base from which they are calculated. this can be done by changing the `font-size` property in the `html` rule.
+
+```css
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 130%;
+  }
+}
+```
+
+We can use services like [Type-Scale](https://type-scale.com/) to help us choose the font sizes.
+
 ## Vertical spacing
+
+## Horizontal spacing
 
 ## Formatting text
