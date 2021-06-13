@@ -2,6 +2,7 @@
 
 [Styling fonts](#styling-fonts)  
 [Embedding web fonts](#embedding-web-fonts)  
+[Flash or unstyled text](#flash-or-unstyled-text)  
 
 ## Styling fonts
 
@@ -74,3 +75,15 @@ body {
   font-family: "opensans", Arial, Helvetica, sans-serif;
 }
 ```
+
+## Flash or unstyled text (FOUT)
+
+FOUT is a problem that users may encounter with our web sites assets if they are on a slow connection. Assets like fonts may take a long time to download and be installed on the users computer. While this is happening the browser will fallback to another font in the font-stack and this might cause some elements to not render correctly. We cannot fully avoid this problem. But we can use the `font-display` property in our `@font-face` declaration rule to minimize the problem.
+
+By default, this property is set to `auto`. This lets the browser decide what should be done while the font is being downloaded. But this behavior is different from one browser to another. If we change it to `swap` all browsers will first render the text with a fallback font, and swap it with our font when it becomes available.
+
+Another option is to set it to `fallback`. This will tell the browser that if the font is not available, then it should immediately fallback to another font in the stack.
+
+A value that we should never use is `block`. This will cause the browser to not display the text until the font is available. The problem is that if the font never becomes available, then the text will never be displayed.
+
+Lastly, we can set it to `optional`. With this value the browser will try to download the font and save it on cache. This can lead to the situation in which the text is rendered differently between the first and subsequent page visits.
