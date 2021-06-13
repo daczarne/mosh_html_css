@@ -34,6 +34,10 @@ Vector images are computer-generated with software like Adobe Illustrator or oth
 
 ## Content images
 
+We add images in the HTML document with the `<img>` element. The `src` attribute is the path to the file. The `alt` attribute needs to be set to a description of the image which the browser will display if the image cannot be loaded, and screen readers will read this description. If the image is purely decorative of the page, then we set the attribute to empty, `alt=""`. If we don't include the attribute at all, then screen readers will read the file name, which might confuse the user.
+
+By default, images are rendered at their real size. We can control the image size with the `width` and `height` properties.
+
 ## Background images
 
 ## CSS sprites
