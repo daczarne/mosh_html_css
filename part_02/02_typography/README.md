@@ -3,6 +3,11 @@
 [Styling fonts](#styling-fonts)  
 [Embedding web fonts](#embedding-web-fonts)  
 [Flash or unstyled text](#flash-or-unstyled-text)  
+[Font service](#font-services)  
+[System font stack](#system-font-stack)  
+[Sizing fonts](#sizing-fonts)  
+[Vertical spacing](#vertical-spacing)  
+[Formatting text](#formatting-text)  
 
 ## Styling fonts
 
@@ -87,3 +92,27 @@ Another option is to set it to `fallback`. This will tell the browser that if th
 A value that we should never use is `block`. This will cause the browser to not display the text until the font is available. The problem is that if the font never becomes available, then the text will never be displayed.
 
 Lastly, we can set it to `optional`. With this value the browser will try to download the font and save it on cache. This can lead to the situation in which the text is rendered differently between the first and subsequent page visits.
+
+## Font service
+
+The largest free web font service is [Google Web Fonts](https://fonts.google.com/). Once we've made our selection, we grave the `<link>` elements and include them in the `<head>` of our HTML document. The first of them is telling the browser that it needs to make a connection with the domain specified in the `href` attribute, and retrieve content from there. The second one is a URL to a stylesheet.When we use font services, the fonts are not stored in our services, but retrieved from a third party host. The stylesheet has all the `@font-face` rules the browser needs to import the fonts.
+
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+```
+
+The link URL has the query parameter `display=swap`. We can change this parameter here.
+
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@700&display=optional" rel="stylesheet">
+```
+
+## System font stack
+
+## Sizing fonts
+
+## Vertical spacing
+
+## Formatting text
