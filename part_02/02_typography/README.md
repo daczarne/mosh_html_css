@@ -204,3 +204,75 @@ p {
 ```
 
 ## Formatting text
+
+For controlling the horizontal alignment of the text we use the `text-align` property of the `<p>` element. Its default value is `left`. This is considered to be the best alignment for the web.
+
+```css
+p {
+  text-align: left;
+}
+```
+
+For adding indentation to the first line of a paragraph we use the `text-indent` property of the `<p>` element. This property takes a unit value, generally set in `rem`. To avoid indenting the first paragraph after a heading we need to use relational selectors. We could, for example, select a `p` that comes after another `p`.
+
+```css
+p + p {
+  text-indent: 1rem
+}
+```
+
+To decorate our text (underline, line-through, etc.) we use the `text-decoration` property of the `<p>` element. We also use this property to change how `<a>` links are styled.
+
+```css
+a {
+  text-decoration: none;
+}
+```
+
+To convert text to lower or uppercase we can use the `text-transform` property. If we set it to `capitalize`, it will capitalize the first letter of every word. This is sometimes used for headings.
+
+```css
+h1 {
+  text-transform: capitalize;
+}
+```
+
+To control white space we use the `white-space` property. If, for example, we set it to `nowrap` our text will always be displayed in one single line. This will cause horizontal scrolling. To control how our overflow is managed we can use the `overflow` property (for example, setting it to `hidden` will hide text that would otherwise be outside the `<p>` element). To change the ending of the visible text we can use the `text-overflow` property. For example, if we set `text-overflow: ellipsis` then an ellipsis will be shown when text is truncated due to overflow.
+
+```css
+p {
+  width: 50ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+```
+
+We can also use the `line-clamp` property to truncate text based on the number of lines. For example, setting `line-clamp: 3` will truncate text after the third line.
+
+### Multi-column text
+
+To build multi-column text we use the `column-*` properties.
+
+- `column-count` determines how many columns there should be. It takes an integer as value.
+- `column-gap` controls the gap between the columns. It takes a measurement as value.
+- `column-rule` is used to add a line between the columns. It takes a measurement, a style, and a color as value (just like a border).
+
+``` css
+p {
+  width: 50ch;
+  column-count: 2;
+  column-gap: 2rem;
+  column-rule: 3px solid #999;
+}
+```
+
+### Text direction
+
+The `direction` property of the `<p>` element allows us to control the direction of text. By default it's set to `ltr` (left to right), but we can change it to `rtl` (right to left) when working with right-to-left languages like Hebrew, Farsi, Arabic, etc. Because of this, we usually apply this rule to the `<body>` element.
+
+```css
+body {
+  direction: rtl
+}
+```
