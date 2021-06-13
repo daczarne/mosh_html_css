@@ -157,6 +157,20 @@ We can use services like [Type-Scale](https://type-scale.com/) to help us choose
 
 ## Vertical spacing
 
+When building pieces of text we need to follow the **Law of proximity**. This means that humans will interpret content that is placed closer to each other as related. So our headings need to be closer to their text than to paragraphs that came before them. To control this, we use the `margin` property. As a rule of thumb, the top margin should be greater than the bottom margin.
+
+To improve readability we use the `line-height` to generate space between lines. As a general rule of thumb, line height should be 1.5 times the font size. If we supply a value without a unit, the browser will multiply the `line-height` value times the `font-size` value and our design won't break if we change the `font-size` property.
+
+```css
+body {
+  margin: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+```
+
 ## Horizontal spacing
 
 ## Formatting text
