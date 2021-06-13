@@ -382,3 +382,28 @@ A different way of doing it is by setting the `visibility` property to `hidden`.
 The difference between these two is that the `display` property hides the element as if it didn't exist in the first place. So all subsequent elements get pushed up. In contrast, the `visibility` property hides the element, but it reserves the place.
 
 ## Media queries
+
+Media queries are used to provide different styles for different devices depending on the devices features. A very common use-case is changing the layout based on the screen size of the device. We call these websites **Responsive web sites** because they respond to different devices. The two main approaches to building responsive web sites are **desktop first** or **mobile first**. The most widely used approach is mobile first. The rationale behind this is that since mobile screens are smaller, you can build a basic web page that is good for mobile devices, and then add more content for larger screens.
+
+A media query starts with `@media` and can have multiple parts. In each part we are asking something about the device. First we include either the key-word `screen` for devices, or `print` for printing. Then we are conditions between parenthesis. Usually these conditions are related to the screen size being wider than X pixels. If the query is true, then the styles defined inside the query will be applied, otherwise they will be ignored.
+
+```css
+@media screen and (min-width: 600px) {
+  selector {
+    rules: here;
+  }
+}
+```
+
+We can use media queries to set the styles for when printing. This will change the style when the user chooses to print our page.
+
+``` css
+@media print {
+  body {
+    font-size: 12pt;
+  }
+  .box {
+    padding: 0.5cm;
+  }
+}
+```
