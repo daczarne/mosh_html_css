@@ -16,6 +16,22 @@
 
 ## Image types and formats
 
+In computers we have two types of images:
+
+1. **Raster** images are made up of pixels (photos)
+2. **Vector** images which are defined by mathematical vectors (icons, logos)
+
+Raster images can be computer-generated, but for the most part come from cameras. They use file extensions like `jpg`, `png`, `gif`, etc. Since they are made up of pixels, the larger the image, the larger the number of pixels and thus the larger the file size.
+
+| Format | Colors | Transparency | Animation |
+| :----: | :----: | :----------: | :-------: |
+|  JPEG  |  16M   |      No      |    No     |
+|  GIF   |  256   |     Yes      |    Yes    |
+|  PNG   |  16M   |     Yes      |    Yes    |
+|  WebP  |  16M   |     Yes      |    Yes    |
+
+Vector images are computer-generated with software like Adobe Illustrator or other software that allows us to draw vectors. They are exported as `SVG` files. They always look sharp at any size (thus the Scalable is SVG).
+
 ## Content images
 
 ## Background images
