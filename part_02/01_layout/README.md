@@ -363,4 +363,22 @@ If we want a cell to be an empty area we use a period, `.`, in the grid template
 
 ## Hiding elements
 
+One way of hiding elements is by setting its `display` property to `none`.
+
+```css
+.first {
+  display: none;
+}
+```
+
+A different way of doing it is by setting the `visibility` property to `hidden`.
+
+```css
+.first {
+  visibility: hidden;
+}
+```
+
+The difference between these two is that the `display` property hides the element as if it didn't exist in the first place. So all subsequent elements get pushed up. In contrast, the `visibility` property hides the element, but it reserves the place.
+
 ## Media queries
