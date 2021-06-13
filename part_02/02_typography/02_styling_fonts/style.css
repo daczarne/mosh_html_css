@@ -1,0 +1,15 @@
+body {
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+p {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1rem;
+  color: #333;
+}
