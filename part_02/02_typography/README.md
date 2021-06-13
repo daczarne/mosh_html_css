@@ -173,4 +173,34 @@ body {
 
 ## Horizontal spacing
 
+To control the spacing between letters in a text we use the `letter-spacing` property. To set letter spacing we shouldn't use relative values as this will push letter further and further apart when the font size changes. We use instead `px` values. By default this value will be set to 0, meaning that the base spacing of the font will be used. We need to set this value to a positive number if we want to increase the spacing, or a negative value if we seek to reduce it.
+
+Likewise, we can specify the space between words with the `word-spacing` property.
+
+``` css
+body {
+  margin: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+}
+
+h1 {
+  font-size: 4.209rem;
+  margin: 3rem 0 1rem;
+  letter-spacing: -1px;
+}
+```
+
+The ideal line length should be between 50 and 70 characters. To control this we need to set the `width` property of the `<p>` object. The unit of measurement that we use here is `ch`. This is a unit that is relative to the width of the zero character. So, for example, `width: 50ch;` means that the width of the paragraph should be the same as the width of 50 zeros placed next to each other.
+
+```css
+p {
+  width: 50ch;
+}
+```
+
 ## Formatting text
