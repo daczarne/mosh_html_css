@@ -1,5 +1,8 @@
 # Typography
 
+[Styling fonts](#styling-fonts)  
+[Embedding web fonts](#embedding-web-fonts)  
+
 ## Styling fonts
 
 Generally speaking there are three family fonts:
@@ -45,5 +48,29 @@ To control the color of the font we use the `color` property. Any valid CSS colo
 ```css
 p {
   color: #333;
+}
+```
+
+## Embedding web fonts
+
+We can add newer, better fonts to our websites. You can get free fonts from [Font Squirrel](https://www.fontsquirrel.com/). We can download the font files is `TTF`, `OTF`, `EOT`, `WOFF`, or `WOFF 2.0` depending on the font. For web it's better to use `WOFF` or `WOFF 2.0` since they are more compressed.
+
+Once we have a font in our project we need to register it in at the top of the stylesheet with `@font-face` rule. This rule tells the browser everything it needs to know about how to use the fonts. The `font-family` rule here defines the name with which we are going to reference the font. The `src` property provides URLs to the fonts with their format. The `font-weight` and `font-style` properties are used to specify the values that the styling rules must have in order for that font to be used. For example, if the user makes a rule with `font-family: 'opensans'`, `font-weight: bold`, `font-style: normal`, then the browser will use the font located that the URL provided in the `src` property.
+
+```css
+@font-face {
+  font-family: "opensans";
+  src: url("../fonts/open-sans/opensans-bold-webfont.woff2") format("woff2"),
+    url("../fonts/open-sans/opensans-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+```
+
+Once we've registered our fonts, we can add them to our font stack.
+
+```css
+body {
+  font-family: "opensans", Arial, Helvetica, sans-serif;
 }
 ```
