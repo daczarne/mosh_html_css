@@ -1,0 +1,34 @@
+.bg-dishes {
+  width: 100px;
+  height: 100px;
+  background: url("../images/css_sprites.png") -4px -4px;
+  display: inline-block;
+}
+
+.bg-landing {
+  width: 100px;
+  height: 100px;
+  background: url("../images/css_sprites.png") -112px -4px;
+  display: inline-block;
+}
+
+.bg-rocketship {
+  width: 100px;
+  height: 100px;
+  background: url("../images/css_sprites.png") -220px -4px;
+  display: inline-block;
+}
+
+.bg-saturn {
+  width: 100px;
+  height: 100px;
+  background: url("../images/css_sprites.png") -328px -4px;
+  display: inline-block;
+}
+
+.bg-ufo {
+  width: 100px;
+  height: 100px;
+  background: url("../images/css_sprites.png") -436px -4px;
+  display: inline-block;
+}

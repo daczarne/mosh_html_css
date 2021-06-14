@@ -94,6 +94,20 @@ body {
 
 ## CSS sprites
 
+If we have a page with multiple images, each time each user requests each image a request is sent to the server. We can use CSS Sprites to optimize these requests. We can combine all images into a single image and then get that image with a single HTTP request. To generate the sprites we can use any online sprite generator (like [here](https://www.toptal.com/developers/css/sprite-generator/)). The generator generates a `png` file with all our images and the CSS classes to use them.
+
+Now we can add the images using `<span>` elements instead of `<img>` elements. The images are applied as a background image. Each span needs to have the class that matches the class in the CSS that corresponds to that image.
+
+```html
+<span class="bg-dishes"></span>
+<span class="bg-landing"></span>
+<span class="bg-rocketship"></span>
+<span class="bg-saturn"></span>
+<span class="bg-ufo"></span>
+```
+
+Don't include large images in sprites, only logos and icons.
+
 ## Data URLs
 
 ## Clipping
