@@ -110,6 +110,23 @@ Don't include large images in sprites, only logos and icons.
 
 ## Data URLs
 
+This is another optimization technique to reduce the number of HTTP requests. It's formerly known as Data URIs. Data is just another protocol that is used to represent a binary file as a sequence of characters. The data URI is passed as the `src` attribute of the `<img>` element. It starts with `data`, which is just the protocol. Then, separated by a colon `:`, comes `image/png` which specifies the type of data we are representing. After that comes a semi-colon `;`, followed by the actual data.
+
+``` html
+<img
+  alt=""
+  src="data:image/png;base64,a_whole_bunch_of_characters_here"
+/>
+```
+
+Now the image is embedded into the HTML document. Therefore, the browser did not have to send an HTTP request to get it.
+
+Problems with this approach include:
+
+- size of the embedded code is always larger that the size of the original resource.
+- increased complexity, as each data URL needs to be generated.
+- slow on mobile.
+
 ## Clipping
 
 ## Filters
