@@ -129,6 +129,14 @@ Problems with this approach include:
 
 ## Clipping
 
+In CSS we can easily clip, or cut, a part of an image. To do so we need to generate a clip path. One tool to produce such paths is [Clippy](https://bennettfeely.com/clippy/). This online tool will generate the value that we need to use for the `clip-path` property of the image element.
+
+``` css
+img {
+  clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+```
+
 ## Filters
 
 ## Supporting high-density screens
