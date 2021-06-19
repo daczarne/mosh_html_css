@@ -139,6 +139,32 @@ img {
 
 ## Filters
 
+In CSS we can add filters to our images like: `grayscale`, `blur`, `contrast`, `brightness`, and so on. All of the are implemented with a function that is passed to the `filter` property. For example, if we want to apply a 70% gray-scale filter we use:
+
+```css
+img {
+  filter: grayscale(70%);
+}
+```
+
+We can also apply more than one filter. To do so we just pass the different function one after the other:
+
+```css
+img {
+  filter: grayscale(70%) blur(3px);
+}
+```
+
+Filters can also be triggered by pseudo-classes like `:hover`.
+
+```css
+img:hover {
+  filter: grayscale(70%) blur(3px);
+}
+```
+
+A complete list of filtering functions can be found in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/filter).
+
 ## Supporting high-density screens
 
 ## Resolution switching
