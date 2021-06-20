@@ -317,6 +317,21 @@ In order to support users using browsers that don't support the WebP image forma
 
 ## Art direction
 
+Some times we want to show a zoomed-in or cropped-up version of an image for certain screen sizes. This is called **Art Direction**. to implement Art Direction we use the `<picture>` element. In the `<source>` element we use the `media` attribute to pass the necessary media conditions. For example, we can tell the browser that, for screens of up to 500px the cropped version of the image needs to be used, and for screens for more than 501px the base image should be used.
+
+```html
+<picture>
+  <source media="(max-width: 500px)" srcset="images/file-name-cropped.jpg" />
+  <source media="(min-width: 501px)" srcset="images/file-name.jpg" />
+  <img
+    src="images/file-name.jpg"
+    alt="A description"
+  />
+</picture>
+```
+
+We can also supply multiple versions of the image for high-density screens.
+
 ## Scalable Vector Graphics (SVG)
 
 ## Font icons
