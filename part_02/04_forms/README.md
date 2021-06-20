@@ -67,6 +67,8 @@ In order for the user to be able to submit the form, we need to add a submit but
 
 ## Styling forms
 
+To make the input field appear in a new line below its label, we can change the `display` property of the label from inline, to block.
+
 ## CSS Frameworks
 
 ## Text fields
