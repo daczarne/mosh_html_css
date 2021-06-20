@@ -279,6 +279,42 @@ We don't need to provide all this code ourselves. We can use tools like [Respons
 
 ## Using modern image formats
 
+WebP is a modern image format. We can convert images to WebP using online tools like [Cloud Convert](https://cloudconvert.com/). Images in WebP format are much smaller than `png` or `jpg`. Once we've converted our image to WebP we can use the `<img>` element to insert it into our markdown.
+
+``` html
+<img
+  src="images/file-name.webp"
+  alt="A description"
+/>
+```
+
+In order to support users using browsers that don't support the WebP image format we need to use the `<picture>` element. Inside this element we are going to use two `<source>` elements and one `<img>` element. The `<source>` elements describe the `type` of picture we are trying to load (`image/webp` for WebP images, and `image/jpeg` for jpg images) as well as the `srcset` that should be used for supporting high-density screens. Then we supply an `<img>` element. This element is important since not all browsers support the `<picture>` and/or `<source>` elements yet, and for supplying the images `alt` attribute.
+
+```html
+<picture>
+  <source
+    type="image/webp"
+    srcset="
+      images/file-name.webp    1x,
+      images/file-name@2x.webp 2x,
+      images/file-name@3x.webp 3x
+    "
+  />
+  <source
+    type="image/jpeg"
+    srcset="
+      images/file-name.jpg    1x,
+      images/file-name@2x.jpg 2x,
+      images/file-name@3x.jpg 3x
+    "
+  />
+  <img
+    src="images/file-name.webp"
+    alt="A description"
+  />
+</picture>
+```
+
 ## Art direction
 
 ## Scalable Vector Graphics (SVG)

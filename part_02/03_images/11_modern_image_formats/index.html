@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>using modern image formats</title>
+  </head>
+  <body>
+    <img
+      src="../images/meal.webp"
+      alt="A bowl of salmon and curry"
+      class="meal"
+    />
+    <picture>
+      <source
+        type="image/webp"
+        srcset="
+          ../images/meal.webp    1x,
+          ../images/meal@2x.webp 2x,
+          ../images/meal@3x.webp 3x
+        "
+      />
+      <source
+        type="image/jpeg"
+        srcset="
+          ../images/meal.jpg    1x,
+          ../images/meal@2x.jpg 2x,
+          ../images/meal@3x.jpg 3x
+        "
+      />
+      <img
+        src="../images/meal.webp"
+        alt="A bowl of salmon and curry"
+        class="meal"
+      />
+    </picture>
+  </body>
+</html>
