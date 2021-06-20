@@ -44,7 +44,7 @@ We can apply background images to elements. To do so, we can either use the `bac
 
 ```css
 body {
-  background-image: url("../images/bg-paper.jpg");
+  background-image: url("images/file-name.jpg");
 }
 ```
 
@@ -52,7 +52,7 @@ By default, the image will be repeated horizontally and vertically as many times
 
 ```css
 body {
-  background-image: url("../images/bg-paper.jpg");
+  background-image: url("images/file-name.jpg");
   background-repeat: no-repeat;
 }
 ```
@@ -61,7 +61,7 @@ To control the position of the image we use the `background-position` property. 
 
 ```css
 body {
-  background-image: url("../images/bg-paper.jpg");
+  background-image: url("images/file-name.jpg");
   background-repeat: no-repeat;
   background-position: 100% -100%;
 }
@@ -72,7 +72,7 @@ To control the size of the image, we use the `background-size` property and supp
 ```css
 body {
   height: 100vh;
-  background-image: url("../images/bg-paper@2x.jpg");
+  background-image: url("images/file-name@2x.jpg");
   background-repeat: no-repeat;
   background-position: 100px 100px;
   background-size: cover;
@@ -84,7 +84,7 @@ We can make our background image stay fixed (relative to the viewport) while the
 ```css
 body {
   height: 300vh;
-  background-image: url("../images/bg-sanfrancisco.jpg");
+  background-image: url("images/file-name.jpg");
   background-repeat: no-repeat;
   background-position: 100px 100px;
   background-size: 100% 100%;
@@ -99,11 +99,32 @@ If we have a page with multiple images, each time each user requests each image 
 Now we can add the images using `<span>` elements instead of `<img>` elements. The images are applied as a background image. Each span needs to have the class that matches the class in the CSS that corresponds to that image.
 
 ```html
-<span class="bg-dishes"></span>
-<span class="bg-landing"></span>
-<span class="bg-rocketship"></span>
-<span class="bg-saturn"></span>
-<span class="bg-ufo"></span>
+<span class="bg-name-of-icon-1"></span>
+<span class="bg-name-of-icon-2"></span>
+<span class="bg-name-of-icon-3"></span>
+```
+
+```css
+.bg-name-of-icon-1 {
+  width: 100px;
+  height: 100px;
+  background: url("images/css_sprites.png") -4px -4px;
+  display: inline-block;
+}
+
+.bg-name-of-icon-2 {
+  width: 100px;
+  height: 100px;
+  background: url("images/css_sprites.png") -112px -4px;
+  display: inline-block;
+}
+
+.bg-name-of-icon-3 {
+  width: 100px;
+  height: 100px;
+  background: url("images/css_sprites.png") -220px -4px;
+  display: inline-block;
+}
 ```
 
 Don't include large images in sprites, only logos and icons.
@@ -167,7 +188,7 @@ A complete list of filtering functions can be found in the [MDN Web Docs](https:
 
 ## Supporting high-density screens
 
-Screens are measured in **pixels**. We can think of pixels are little squares of screen area. When we say that, for example, an iPhone 3 has a 480x320 screen we are saying that the screen of such devices is 480 pixels in height and 320 pixels in width. Later on, the iPhone 4 was launched. It had a 960x640 screen, but the same physical size. What Apple had done was to reduce the size of each pixel (i.e. each square in the screen) to half its size. Apple called this new high-density screens *Retina* displays.
+Screens areas are measured in **pixels**. We can think of pixels are little squares of screen area. When we say that, for example, an iPhone 3 has a 480x320 screen we are saying that the screen of such devices is 480 pixels in height and 320 pixels in width. Later on, the iPhone 4 was launched. It had a 960x640 screen, but the same physical size. What Apple had done was to reduce the size of each pixel (i.e. each square in the screen) to half its size. Apple called this new high-density screens *Retina* displays.
 
 In order to display images on these devices, a scale factor was introduced. So, when the scale factor is, for example, `2x` all images are displayed at twice the logical `width` that we supply in our CSS. This means that a 320x320 image takes as much screen space in an iPhone 4 than in an iPhone 3, despite the later having twice the number of pixels.
 
@@ -215,7 +236,7 @@ We cannot provide all possible sizes, but we can provide three or four of them a
 
 ```html
 <img
-  src="../images/meal.jpg"
+  src="images/meal.jpg"
   alt="A bowl of salmon and curry"
   srcset="
     images/meal.jpg     400w,
@@ -234,6 +255,27 @@ img {
 Now suppose we want the space taken by the image to vary based on the size of the screen. For example, we might want the image to take up the entire screen width on mobile devices, half the screen in tablets, and one-third in desktops.
 
 ![](img/resolution_switching_02.png)
+
+We don't use media queries to implement this because the browser's decision will be impacted by the width that we apply to the image. Instead, we are use the `sizes` attribute of the `<img>` element. Each row in the `sizes` list can start with a **media condition**. In this example, we are telling the browser that if width of the viewport is 500px or less, then the image should be displayed at 100vw (the entire width of the screen), if it's between 500px and 700px, then the image should be displayed at 50vw (half the width of the screen), otherwise it should be displayed at 33vw (one third of the screen).
+
+```html
+<img
+  src="images/meal.jpg"
+  alt="A bowl of salmon and curry"
+  srcset="
+    images/meal.jpg     400w,
+    images/meal@2x.jpg  800w,
+    images/meal@3x.jpg 1200w
+  "
+  sizes="
+    (max-width: 500px) 100vw,
+    (max-width: 700px) 50vw,
+    33vw
+  "
+/>
+```
+
+We don't need to provide all this code ourselves. We can use tools like [Responsive Breakpoints](https://www.responsivebreakpoints.com/) to do it for us.
 
 ## Using modern image formats
 
