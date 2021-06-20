@@ -167,6 +167,45 @@ A complete list of filtering functions can be found in the [MDN Web Docs](https:
 
 ## Supporting high-density screens
 
+Screens are measured in **pixels**. We can think of pixels are little squares of screen area. When we say that, for example, an iPhone 3 has a 480x320 screen we are saying that the screen of such devices is 480 pixels in height and 320 pixels in width. Later on, the iPhone 4 was launched. It had a 960x640 screen, but the same physical size. What Apple had done was to reduce the size of each pixel (i.e. each square in the screen) to half its size. Apple called this new high-density screens *Retina* displays.
+
+In order to display images on these devices, a scale factor was introduced. So, when the scale factor is, for example, `2x` all images are displayed at twice the logical `width` that we supply in our CSS. This means that a 320x320 image takes as much screen space in an iPhone 4 than in an iPhone 3, despite the later having twice the number of pixels.
+
+The problem is that when raster images are scaled up they blur up, as the browser needs to generate more pixels. To solve this issue we need to provide multiple versions of our image at different scale factors that will all then be displayed at the original size.
+
+Some technical definitions:
+
+- **Physical resolution**: the actual number of pixels in the device's screen. For example, iPhone 4 has a physical resolution of 960x640.
+- **Logical resolution**: the behavior resolution. This is the resolution that CSS uses. For example, iPhone 4 has a logical resolution of 480x320.
+- **Device pixel ratio (DPR)**: the ratio between physical to logical pixels. Any scree with DPR > 1 is considered a high-density screen. For example, iPhone 4 has a DPR of 2.
+
+When generating the different versions of our images it's customary to name each file following this rule:
+
+- The original image is appended `-full`. For example, if we have an image called of a dish, we can call it `meal-full.jpg`.
+- The image at `1x` gets the base name only. For example, `meal.jpg` stays as `meal.jpg`.
+- Each enlarged image is names with the same name as the original but `@fx` gets appended, where `f` is the factor. For example, the version of `meal.jpg` that was enlarged by a factor of 2 will be called `meal@2x.jpg`. Likewise, the `3x` version of the image file will be named `meal@3x.jpg`, and so on.
+
+We never generate all possible DPRs (there is an infinite amount of them anyways). Usually, we generate the `1x`, `2x`, and `3x` version of the images. To do so we can use PhotoShop or other online tools. When generating such images we start from the `-full` version. First we generate the largest version that we want, say `3x`. Then we go down one step at the time, for example, generating the `2x` version, and lastly the `1x` version. This is because if we first reduced it to `1x`, then to generate the `2x` version, our software will have to create new pixels and the image will get blurred. Of course, an alternative is to always start from the `-full` version, but this might require us to close and re-open the software in every step.
+
+When selecting the size, keep in mind that we are always specifying logical pixels. So, if we want our image to be displayed at 400 logical pixels, then the `3x` physical version of the image needs to be 1200 pixels. Keep in mind that, for our example, the `-full` version of our image needs to be greater than 1200 pixels.
+
+In the HTML document, we start by adding the base version of our image to the `src` attribute of the `<img>` element. Then we use the `srcset` attribute to provide the different versions. Here we'll create a list of comma separated values. Each value is the path to the file followed by a space and the version of the image. The browser will select the appropriate version of the image based on the screen DPR in the user's device.
+
+```html
+<img
+  src="images/meal.jpg"
+  alt="A bowl of salmon and curry"
+  class="meal"
+  srcset="
+    images/meal.jpg    1x,
+    images/meal@2x.jpg 2x,
+    images/meal@3x.jpg 3x
+  "
+/>
+```
+
+When testing our page in different devices, we can use Chrome DevTools to check which version of the image was used in different devices. This technique is for fixed sized images.
+
 ## Resolution switching
 
 ## Using modern image formats
