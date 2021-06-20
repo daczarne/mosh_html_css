@@ -195,7 +195,6 @@ In the HTML document, we start by adding the base version of our image to the `s
 <img
   src="images/meal.jpg"
   alt="A bowl of salmon and curry"
-  class="meal"
   srcset="
     images/meal.jpg    1x,
     images/meal@2x.jpg 2x,
@@ -207,6 +206,34 @@ In the HTML document, we start by adding the base version of our image to the `s
 When testing our page in different devices, we can use Chrome DevTools to check which version of the image was used in different devices. This technique is for fixed sized images.
 
 ## Resolution switching
+
+Sometimes we need to display images at a constant relative unit in different devices (for example, a background image that needs to fill the entire viewport).
+
+![](img/resolution_switching_01.png)
+
+We cannot provide all possible sizes, but we can provide three or four of them and then instruct the browser how to pick the image that is best for the screen the user is using. The way to do this is to change the units in our HTML mark-up. The `w` unit is telling the browser that that version of the image is 400 pixels wide, or 800 pixels wide, etc.
+
+```html
+<img
+  src="../images/meal.jpg"
+  alt="A bowl of salmon and curry"
+  srcset="
+    images/meal.jpg     400w,
+    images/meal@2x.jpg  800w,
+    images/meal@3x.jpg 1200w
+  "
+/>
+```
+
+```css
+img {
+  width: 100vw;
+}
+```
+
+Now suppose we want the space taken by the image to vary based on the size of the screen. For example, we might want the image to take up the entire screen width on mobile devices, half the screen in tablets, and one-third in desktops.
+
+![](img/resolution_switching_02.png)
 
 ## Using modern image formats
 
