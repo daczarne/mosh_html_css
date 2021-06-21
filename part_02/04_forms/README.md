@@ -93,6 +93,14 @@ To implement Bootstrap we need to add the CND links in the `<head>` section of t
 
 To style our form we now need to add the necessary classes. To do so, go to the [Forms](https://getbootstrap.com/docs/5.0/forms/overview/) section in the documentation. Here you can find different styles and the mark-up that you need to use in order for your page to look like it.
 
+Another framework is [Milligram](https://milligram.io/). Just like Bootstrap, in order to use Milligram you first need to add the CND link to the `<head>` section of the HTML document. Milligram will provide basic CSS styling without you adding any classes (which means that the theme targets the HTML element tags).
+
+``` html
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+</head>
+```
+
 ## Text fields
 
 ## Data lists
