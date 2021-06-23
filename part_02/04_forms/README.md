@@ -19,10 +19,7 @@
 
 To create forms we use the `<form>` element. Each form must have an `action`, either `GET` or `POST`. This will be covered in the [Submitting the form](#submitting-the-form) section.
 
-Inside the form we need to include one or more input fields, also called **form controls**. To generate controls we use the `<input>` element. Each input element must have a `type`. These include:
-
-- `text` for creating text input fields.
-- `email` for creating email inputs. This are different from plain text in the sense that the email input includes email validation.
+Inside the form we need to include one or more input fields, also called **form controls**. To generate controls we use the `<input>` element. Each input element must have a `type` (like `text` for creating text input fields, or `email` for creating email inputs with email validation).
 
 Each input field must have a label to tell the user what he/she needs to input in the field. To create such labels we use the `<label>` element. In between the element tags we put the name of the field. Each label has a `for` attribute. This attribute is used to link the `<label>` element to its corresponding `<input>` element. To achieve this, the value of the `for` attribute of the `<label>` element must be the same as the `id` attribute of the `<input>` element.
 
@@ -35,7 +32,7 @@ Each input field must have a label to tell the user what he/she needs to input i
 
 To vertically align an input and its label we need to wrap the two together in a `<div>` element.
 
-```html
+``` html
 <form>
   <div>
     <label for="name">Name</label>
@@ -105,7 +102,7 @@ Another framework is [Milligram](https://milligram.io/). Just like Bootstrap, in
 
 Text fields are used to let the user input free text. We create them with the `<input>` element with the `type="text"` attribute.
 
-```html
+``` html
 <form>
   <label for="text-input">Text Input</label>
   <input id="text-input" type="text" />
@@ -114,7 +111,7 @@ Text fields are used to let the user input free text. We create them with the `<
 
 We can change `type="number"` to transform it into an numeric input field. This will add up and down arrows to the side of the input field. If the user is on mobile, the number pad will come up when tapping on it.
 
-```html
+``` html
 <form>
   <label for="number-input">Numeric Input</label>
   <input id="number-input" type="number" />
@@ -123,7 +120,7 @@ We can change `type="number"` to transform it into an numeric input field. This 
 
 We can also use `type="password"` to create password input fields. Whatever the user inputs here will be masked with dots.
 
-```html
+``` html
 <form>
   <label for="password-input">Password</label>
   <input id="password-input" type="password" />
@@ -132,7 +129,7 @@ We can also use `type="password"` to create password input fields. Whatever the 
 
 If we change to `type="date"` our field becomes a date input selector.
 
-```html
+``` html
 <form>
   <label for="date-input">Date</label>
   <input id="date-input" type="date" />
@@ -141,7 +138,7 @@ If we change to `type="date"` our field becomes a date input selector.
 
 If we set `type="email"` we get an input that looks like text, but has basic email validation.
 
-```html
+``` html
 <form>
   <label for="email-input">Email</label>
   <input id="email-input" type="email" />
@@ -152,7 +149,7 @@ You can see a complete list of all possible values in the [Mozilla documentation
 
 When we want to allow the user to input multiple lines of text we use the `<textarea>` element. We use the attributes `cols` and `rows` to control the number of columns (characters per line) and rows (number of lines) that the user can input.
 
-```html
+``` html
 <form>
   <label for="textarea-input">Text area input</label>
   <textarea name="" id="textarea-input" cols="30" rows="10"></textarea>
@@ -161,7 +158,7 @@ When we want to allow the user to input multiple lines of text we use the `<text
 
 If don't want the user to be able to re-size the text area box, we need to add the following rule to our CSS
 
-```css
+``` css
 textarea {
   resize: none;
 }
