@@ -103,6 +103,81 @@ Another framework is [Milligram](https://milligram.io/). Just like Bootstrap, in
 
 ## Text fields
 
+Text fields are used to let the user input free text. We create them with the `<input>` element with the `type="text"` attribute.
+
+```html
+<form>
+  <label for="text-input">Text Input</label>
+  <input id="text-input" type="text" />
+</form>
+```
+
+We can change `type="number"` to transform it into an numeric input field. This will add up and down arrows to the side of the input field. If the user is on mobile, the number pad will come up when tapping on it.
+
+```html
+<form>
+  <label for="number-input">Numeric Input</label>
+  <input id="number-input" type="number" />
+</form>
+```
+
+We can also use `type="password"` to create password input fields. Whatever the user inputs here will be masked with dots.
+
+```html
+<form>
+  <label for="password-input">Password</label>
+  <input id="password-input" type="password" />
+</form>
+```
+
+If we change to `type="date"` our field becomes a date input selector.
+
+```html
+<form>
+  <label for="date-input">Date</label>
+  <input id="date-input" type="date" />
+</form>
+```
+
+If we set `type="email"` we get an input that looks like text, but has basic email validation.
+
+```html
+<form>
+  <label for="email-input">Email</label>
+  <input id="email-input" type="email" />
+</form>
+```
+
+You can see a complete list of all possible values in the [Mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input).
+
+When we want to allow the user to input multiple lines of text we use the `<textarea>` element. We use the attributes `cols` and `rows` to control the number of columns (characters per line) and rows (number of lines) that the user can input.
+
+```html
+<form>
+  <label for="textarea-input">Text area input</label>
+  <textarea name="" id="textarea-input" cols="30" rows="10"></textarea>
+</form>
+```
+
+If don't want the user to be able to re-size the text area box, we need to add the following rule to our CSS
+
+```css
+textarea {
+  resize: none;
+}
+```
+
+The `<input>` element has other useful attributes:
+
+- we use the `value="some_text"` attribute to pre-populate a field. We generally do this when we want to suggest an input for the user.
+- we use the `placeholder="some_text"` attribute to provide an explanation text or example. This placeholder text disappears when the users inputs a value in the field.
+- if we add the boolean attribute `readonly` then the user will not be able to change the `value` in the field. When submitted, this value will be sent to the server.
+- if we add the boolean attribute `disabled` then the field will be grayed-out and the user will not be able to input anything. `value`s in a `disable`d field will not be sent to the server when submitting a form.
+- `maxlength="number"` is an attribute that allows us to control the maximum number of characters the user is able to input in the field.
+- we use the boolean attribute `autofocus` to cause the browser to focus on that field as soon as the page loads.
+
+The `<textarea>` element has the same attributes except for the `value` one. If we want to pre-populate the element we need to provide the text in between the tags.
+
 ## Data lists
 
 ## Drop-down lists
