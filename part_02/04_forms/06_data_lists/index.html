@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+    <title>Data lists</title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="text-input">Text Input</label>
+        <input
+          id="text-input"
+          type="text"
+          list="list-of-options"
+          autocomplete="off"
+        />
+        <datalist id="list-of-options">
+          <option value="option-1">Option 1</option>
+          <option value="option-2">Option 2</option>
+          <option value="option-3">Option 3</option>
+          <option value="option-4">Option 4</option>
+        </datalist>
+      </div>
+    </form>
+  </body>
+</html>

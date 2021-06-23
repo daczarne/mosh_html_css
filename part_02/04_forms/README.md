@@ -177,6 +177,32 @@ The `<textarea>` element has the same attributes except for the `value` one. If 
 
 ## Data lists
 
+To provide the user with input suggestions as he/she types in the text input field, we need to add a `<datalist>` after the input field. This datalist must be linked to the input field. To do this, we need to provide a unique `id` to the datalist. Then, we pass the same value as the datalist `id` to the `<input>`'s `list` attribute. The user is still able to supply any text he/she wants into the field.
+
+Inside the data list we need to provide a the list of `<option>`s that we want the user to select from. The text that the user will see in the selection list needs to be supplied in between the `<option>` tags. The value that is sent to the server when the form is submitted needs to be provided in the `value` attribute of each `<option>` element. By default, the browser will display both the `value` and the text.
+
+Generally when using data lists we want to turn off the autocomplete feature of the browser for that input. To do so, we need to add the `autocomplete="off"` attribute to the `<input>` field.
+
+``` html
+<form>
+  <div>
+    <label for="text-input">Text Input</label>
+    <input
+      id="text-input"
+      type="text"
+      list="list-of-options"
+      autocomplete="off"
+    />
+    <datalist id="list-of-options">
+      <option value="option-1">Option 1</option>
+      <option value="option-2">Option 2</option>
+      <option value="option-3">Option 3</option>
+      <option value="option-4">Option 4</option>
+      </datalist>
+  </div>
+</form>
+```
+
 ## Drop-down lists
 
 ## Check boxes
