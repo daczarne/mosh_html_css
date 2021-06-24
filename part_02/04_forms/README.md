@@ -337,7 +337,7 @@ Sometime we need to create forms for editing content. When these forms are submi
 <input type="hidden" name="table-column-name" value="id" />
 ```
 
-Never store sensitive data in this inputs. Even though they are not rendered to the page, the user can still see them when using DevTools.
+Never store sensitive data in this inputs. Even though they are not rendered to the page, the user can still see them when using DevTools. We only use hidden fields to provide a server with the id of the content that is being edited.
 
 ## Data validation
 
