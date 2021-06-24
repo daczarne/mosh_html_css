@@ -310,6 +310,25 @@ If we add the attribute `accept` we can specify the type of files the user can s
 
 ## Grouping related fields
 
+As our forms become larger and more complex we need to group together locally related form controls. To do so we use the `<fieldset>` element. Inside the `<fieldset>` element first we add a `<legend>` element to supply a title to the set, and then we add the form controls. Alternatively, we can use the `<section>` element to group, and an `<h2>` element to provide a title.
+
+``` html
+<form>
+  <fieldset>
+    <legend>Group 1</legend>
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+  </fieldset>
+  <fieldset>
+    <legend>Group 2</legend>
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+  </fieldset>
+</form>
+```
+
 ## Hidden fields
 
 ## Data validation
