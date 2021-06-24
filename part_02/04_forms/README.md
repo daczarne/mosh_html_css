@@ -245,6 +245,27 @@ If we have many `<select>` elements its better to group them together. To do so 
 
 ## Check boxes
 
+To generate check boxes we use the `<input>` element with a `type="checkbox"` attribute. To associate the box with its label we use the `<label>` element and set the `<input>` element's `id` attribute to the same value as the `<label>` element's `for` attribute.
+
+``` html
+<input type="checkbox" name="value-sent-to-server" id="checkbox-input" />
+<label for="checkbox-input">Label</label>
+```
+
+To make a checkbox appeared selected by default we add the boolean attribute `checked` to the `<input>` element.
+
+``` html
+<input type="checkbox" name="value-sent-to-server" id="checkbox-input" checked />
+<label for="checkbox-input">Label</label>
+```
+
+Likewise, if we want a checkbox to appear disabled (grayed-out) we need to add the `disabled` boolean attribute to the `<input>` element.
+
+``` html
+<input type="checkbox" name="value-sent-to-server" id="checkbox-input" disabled />
+<label for="checkbox-input">Label</label>
+```
+
 ## Radio buttons
 
 ## Sliders
