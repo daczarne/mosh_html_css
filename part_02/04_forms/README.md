@@ -205,6 +205,44 @@ Generally when using data lists we want to turn off the autocomplete feature of 
 
 ## Drop-down lists
 
+To create a drop-down list we use the `<select>` element. We use its `id` attribute to link the element to a specific `<label>` element, and we use its `name` attribute when submitting the form to a server. If we add the boolean attribute `multiple` the user will be able to select multiple elements from the dropdown.
+
+Inside the `<select>` element we can add multiple `<option>` elements. If we leave the first option empty the selection becomes optional for the user. He/She can choose not to select anything. If we add the boolean attribute `selected` to an option, that option becomes the default selection in the drop-down list.
+
+``` html
+<form>
+  <div>
+    <label for="drop-down-list">Drop-down list</label>
+    <select name="" id="drop-down-list">
+      <option value="option-1" selected>Option 1</option>
+      <option value="option-2">Option 2</option>
+      <option value="option-3">Option 3</option>
+      <option value="option-4">Option 4</option>
+    </select>
+  </div>
+</form>
+```
+
+If we have many `<select>` elements its better to group them together. To do so we use the `<optgroup>` element.
+
+``` html
+<form>
+  <div>
+    <label for="drop-down-list">Drop-down list</label>
+    <select name="" id="drop-down-list">
+      <optgroup label="group-1">
+        <option value="option-1">Option 1</option>
+        <option value="option-2">Option 2</option>
+      </optgroup>
+      <optgroup label="group-2">
+        <option value="option-3">Option 3</option>
+        <option value="option-4">Option 4</option>
+      </optgroup>
+    </select>
+  </div>
+</form>
+```
+
 ## Check boxes
 
 ## Radio buttons
