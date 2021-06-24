@@ -289,6 +289,25 @@ To show the currently selected value to the user, we need to use JavaScript.
 
 ## File inputs
 
+To allow the user the input files in forms (like when adding a profile picture that is saved in a raster image on the user's local computer) we use the `<input>` element with `type="file"`. This will generate a *Choose files* button and open the file explorer when clicked.
+
+``` html
+<input type="file" />
+```
+
+If we add the `multiple` boolean attribute, the user will be allowed to select multiple files.
+
+``` html
+<input type="file" multiple />
+```
+
+If we add the attribute `accept` we can specify the type of files the user can select. To add multiple file types we list them separated with a comma. We can also use wild-card selectors. For example, with `accept="image/*"` we allow the user to select any image file. Other options include `accept="video/*"` and `accept="audio/*"`.
+
+``` html
+<input type="file" accept=".jpg, .png" />
+<input type="file" accept="image/*" />
+```
+
 ## Grouping related fields
 
 ## Hidden fields
