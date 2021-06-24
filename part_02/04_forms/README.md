@@ -268,6 +268,15 @@ Likewise, if we want a checkbox to appear disabled (grayed-out) we need to add t
 
 ## Radio buttons
 
+When we want the user to select one out of a few options, we can use Radio Buttons. To do so we use the `<input>` element with `type="radio"`. When doing so, the `name` attribute is used to group multiple buttons (of which, the user will only be allowed to select one). As with check boxes before, to link a radio button with a label we supply the same value to the `<input>` element's `id` attribute than to the `<label>` element's `for` attribute.
+
+``` html
+<input type="radio" name="group-of-radio-buttons" id="radio-input-1" />
+<label for="radio-input-1">Value shown to the user</label>
+```
+
+Here to we can pre-select by adding the `selected` boolean attribute, or disable by adding the `disabled` boolean attribute to the `<input>` element.
+
 ## Sliders
 
 ## File inputs
