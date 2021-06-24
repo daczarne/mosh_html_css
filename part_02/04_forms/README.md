@@ -331,6 +331,14 @@ As our forms become larger and more complex we need to group together locally re
 
 ## Hidden fields
 
+Sometime we need to create forms for editing content. When these forms are submitted to the server, the server has no way of knowing which element id in it's data base it should edit. This is were the hidden elements come to play. To create a hidden field we use the `<input>` element with `type="hidden"`. In the `name` attribute we supply the table column that the server needs to update, and in the `value` attribute the id of the entry.
+
+``` html
+<input type="hidden" name="table-column-name" value="id" />
+```
+
+Never store sensitive data in this inputs. Even though they are not rendered to the page, the user can still see them when using DevTools.
+
 ## Data validation
 
 ## Submitting the form
