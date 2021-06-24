@@ -279,6 +279,14 @@ Here to we can pre-select by adding the `selected` boolean attribute, or disable
 
 ## Sliders
 
+To generate slider inputs we use `<input>` element with a `type="range"`. We need to provide a `min`, `max`, and `value` attributes for the minimum value, maximum value, and currently selected value respectively.
+
+``` html
+<input type="range" min="0" max="100" value="90" />
+```
+
+To show the currently selected value to the user, we need to use JavaScript.
+
 ## File inputs
 
 ## Grouping related fields
