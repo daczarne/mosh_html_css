@@ -371,3 +371,17 @@ For numeric fields we can use the `min` and `max` attributes to make sure the va
 ```
 
 ## Submitting the form
+
+To allow form submission we need to include a *Submit* button. We can either add it with the `<button>` element, or with the `<input>` element of `type="submit"`. The difference between these two approaches is that with the `<input>` element we cannot add an icon.
+
+``` html
+<input type="submit" value="Submit" />
+<button type="submit">Submit</button>
+```
+
+When submitting form there are two attributes that we need to consider: `action`, and `method`. The value of the `action` attribute is the backend service (a URL) to which the form needs to be submitted. The value of the `method` attribute is either `GET` or `POST`:
+
+- we use `GET` when we want the form values to be appended to the target URL. We use it when we want to bookmark that URL so that we can get back to it.
+- we use `POST` when we want the form values to be included in the body of the HTTP request.
+
+To submit a form each `<input>` element must have a `name` attribute.
