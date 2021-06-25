@@ -341,4 +341,33 @@ Never store sensitive data in this inputs. Even though they are not rendered to 
 
 ## Data validation
 
+Before submitting a form we must always validate the data to protect ourselves from data corruption and attacks. Some basic validation can be performed with HTML, but for more complex things we need to use JavaScript.
+
+One attribute that we can use for data validation is the `required` boolean attribute. This make a field mandatory. We can also use `minlength` and `maxlength` to control how long a string can be. `maxlength` is an attribute that we should always use to prevent SQL injections.
+
+``` html
+<form>
+  <input type="text" required minlength="3" maxlength="10" />
+  <button type="submit">Submit</button>
+</form>
+```
+
+If the field is for entering emails make sure to select the `email` type as this will cause the browser to check that the input is indeed an email.
+
+``` html
+<form>
+  <input type="email" required />
+  <button type="submit">Submit</button>
+</form>
+```
+
+For numeric fields we can use the `min` and `max` attributes to make sure the value falls withing that range. This is very important when values must fall withing certain range (for example, a price cannot be negative).
+
+``` html
+<form>
+  <input type="number" required min="0" max="10" />
+  <button type="submit">Submit</button>
+</form>
+```
+
 ## Submitting the form
