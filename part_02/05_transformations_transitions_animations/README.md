@@ -33,6 +33,31 @@ We can pass more than one function to a selector. When doing so, keep in mind th
 
 ## 3D transformations
 
+We can also apply transformations along the Z axis of our web page. Before doing so we must use the `perspective()` function to define a virtual space. For example, `transform: perspective(200px)` means that in our virtual space, the distance between the element and the viewer is 200px. If we want to apply the same perspective to all child elements of an element, then we use the `perspective` property of that element.
+
+``` css
+.container {
+  perspective: 200px;
+}
+```
+
+With the `translateZ()` function we can move objects closer to the viewer (by supplying a positive value) or farther away from the viewer (by supplying a negative value).
+
+``` css
+.box:hover {
+  transform: perspective(200px) translateZ(50px);
+}
+```
+
+If we need to change the point of origin of the transformation we use the `transform-origin` property. To it we need to supply two values: `x-offset, y-offset`. The values `0 0` mean top-left corner of the element, and `100% 100%` means bottom-right corner of the element.
+
+``` css
+.box:hover {
+  transform: perspective(200px) translateZ(50px);
+  transform-origin: 0 50%;
+}
+```
+
 ## Transitions
 
 ## Animations
