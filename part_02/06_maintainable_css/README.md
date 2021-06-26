@@ -50,3 +50,9 @@ OO-CSS is based on two simple principles:
 2. **Separate structure from skin**: rules that define the structure of a component (height, width, padding, margins, display, etc), should not be declared in the same rules that define the look of a component (color, background, fonts, etc). We can then apply multiple classes to elements when we want to use both rules. Use abstract names for classes.
 
 ## BEM
+
+BEM is a popular naming convention. It stands for **Block Element Modifier**. A block is any modular component of our web page.
+
+In BEM the name of the module and the name of the element are separated with two underscores. So, the class `card-header` becomes `card__header`.
+
+The names of the block and the name of the modifier are separated using double dashes, `--`. So, the class `card_popular` becomes `card--popular`.
