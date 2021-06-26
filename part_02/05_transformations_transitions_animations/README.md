@@ -125,4 +125,56 @@ We can also animate multiple properties by just adding the instructions separate
 
 ## Animations
 
+For more complex animations the `transition` property will not be enough. Here's when we use the `animate` property. These animations are built by defining the state of the element in different **keyframes**. The keyframes are defined using the `@keyframes` rule. After calling the rule we need to supply a name for our animation, and, in between braces, define the states of the element.
+
+``` css
+@keyframes identifier {
+  /* Frames go here */
+}
+```
+
+Inside the braces we define our frames. Each frame is identified by a percentage of time that should have elapsed since the start of the animation for the transformations to occur. For example, in the code below we are saying that at 0% of time elapsed (i.e. at the beginning) the scale should be 1 (that is, do nothing). After 25% of the animation duration has elapsed the element should scale up to 1.3 times its base size. We can define as many frames in as many intervals as we want.
+
+``` css
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.3);
+  }
+
+  50% {
+    transform: rotate(45deg);
+    background-color: tomato;
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+```
+
+After we've defined our animation we need to use it. To do so, we need to supply the name of our animation to the `animation-name` property of the targeted element (the element we wish to animate). We also need to specify how long our animation should last (since are frames are defined as a percentage of time elapsed). To do so, we use the `animation-duration` property and supply a number of seconds.
+
+``` css
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  animation-name: pop;
+  animation-duration: 4s;
+}
+```
+
+Other useful properties are:
+
+- `animation-delay` to specify a number of seconds to wait before starting the animation. The default value is 0.
+- `animation-iteration-count` to specify how many times the animation must run. The default is 1. If we want it to run forever, we set it to `infinite`.
+- `animation-timing-function` to specify the timing function. Default is `linear`, but `ease-in`, `ease-out`, `ease-in-out`, and `cubic-bezier` are also available.
+- `animation-direction` to control the direction of the animation. Default value is `normal` which plays the animation from the first frame to the last. But we can set it to `reverse` to play it from last frame to first frame.
+
+We can also use the short hand property `animation` and pass all values there in the correct order.
+
 ## Reusable animations
