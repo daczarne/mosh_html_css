@@ -1,0 +1,18 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  transition: transform 0.5s linear 1s, background-color 0.7s ease-in 0.9s;
+}
+
+.box:hover {
+  transform: rotate(45deg);
+  background-color: dodgerblue;
+}

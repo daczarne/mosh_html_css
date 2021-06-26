@@ -60,6 +60,69 @@ If we need to change the point of origin of the transformation we use the `trans
 
 ## Transitions
 
+We use the `transition` property to animate one or more properties. With this we can create a smooth transition between one state and the other. To this property we need to supply the name of the property we want to transition and a duration that specifies how long it should take to go from one state of the property to the other. For example, with the code below we are telling the browser that is should take 0.5 seconds to transition from the `.box` state (the normal state of the element), to the rotated state of the element (which should trigger on hover).
+
+``` css
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  transition: transform 0.5s;
+}
+
+.box:hover {
+  transform: rotate(45deg);
+}
+```
+
+We can also supply a time function to the `transition` property. The default is `linear` which means that the transition will progress at a linear rate (same number of pixes per unit of time). But we also have functions like `ease-in` (start slowly and speed up), `ease-out` (start fast and slow down). We can specify a custom curve using the `cubic-bezier()` function. We don't have to build this functions ourselves. We can use tools like [cubic-bezier.com](https://cubic-bezier.com) to do it.
+
+``` css
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  transition: transform 0.5s cubic-bezier(0.23, 0.59, 0.79, 0.41);
+}
+
+.box:hover {
+  transform: rotate(45deg);
+}
+```
+
+Optionally, we can also specify a delay value. This will determine how long after the trigger is detected the animation will start. For example, the code below says that the animation should start 1 second after the user hovers over the box.
+
+``` css
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  transition: transform 0.5s linear 1s;
+}
+
+.box:hover {
+  transform: rotate(45deg);
+}
+```
+
+We can also animate multiple properties by just adding the instructions separated by commas. For example, the code below says that when the user hovers over the element, both the `transform` property and the `background-color` should be transitioned from one state to another.
+
+``` css
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  transition: 
+    transform 0.5s linear 1s,
+    background-color 0.7s ease-in 0.9s;
+}
+
+.box:hover {
+  transform: rotate(45deg);
+  background-color: dodgerblue;
+}
+```
+
 ## Animations
 
 ## Reusable animations
