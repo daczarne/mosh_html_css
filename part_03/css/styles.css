@@ -318,8 +318,8 @@ a {
 
 .plan__name {
   color: white;
-  font-weight: 500;
   font-size: 2.4rem;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -330,8 +330,8 @@ a {
 .plan__billing-cycle {
   font-size: 2.4rem;
   font-weight: 300;
-  opacity: 0.8;
   margin-right: 1rem;
+  opacity: 0.8;
 }
 
 .plan__description {
@@ -343,6 +343,19 @@ a {
 
 .plan .list__item {
   margin-bottom: 2rem;
+}
+
+.plan--popular .card__header {
+  position: relative;
+}
+
+.plan--popular .card__header::before {
+  content: url(../images/popular.svg);
+  width: 40px;
+  display: inline-block;
+  position: absolute;
+  top: -6px;
+  right: 5%;
 }
 
 @media screen and (min-width: 1024px) {
