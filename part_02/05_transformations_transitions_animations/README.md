@@ -178,3 +178,5 @@ Other useful properties are:
 We can also use the short hand property `animation` and pass all values there in the correct order.
 
 ## Reusable animations
+
+We can make animations reusable by using classes. We can also use animations created by other people. Some of those can be found in [Animate.css](https://animate.style/).
