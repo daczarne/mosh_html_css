@@ -20,6 +20,28 @@ Eight techniques that will make your CSS more easy to read and maintainable
 
 ## Variables
 
+We use variables (also called custom properties) to keep our code DRY. Variables need to be declared at the top of our file in the `:root` pseudo-class selector. All variables start with two hyphens and then their name: `--var-name`, followed by colon, `:`, and their value. All elements in the DOM will have access to this custom properties.
+
+``` css
+:root {
+  --color-primary: #ffdd36;
+  --border-size: 2px;
+  --border-radius: 10px;
+}
+```
+
+Now we can access them using the `var()` function, and supplying the name of the variable as an argument.
+
+``` css
+.one {
+  background: var(--color-primary);
+}
+
+.two {
+  color: var(--color-primary);
+}
+```
+
 ## Object-oriented CSS
 
 ## BEM
