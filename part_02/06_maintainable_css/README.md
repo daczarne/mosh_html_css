@@ -44,4 +44,9 @@ Now we can access them using the `var()` function, and supplying the name of the
 
 ## Object-oriented CSS
 
+OO-CSS is based on two simple principles:
+
+1. **Separate container from content**: This means that styles for the container and the content should not be declared together. This makes content styles reusable and avoids replication.
+2. **Separate structure from skin**: rules that define the structure of a component (height, width, padding, margins, display, etc), should not be declared in the same rules that define the look of a component (color, background, fonts, etc). We can then apply multiple classes to elements when we want to use both rules. Use abstract names for classes.
+
 ## BEM
