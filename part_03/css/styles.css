@@ -321,7 +321,7 @@ a {
   }
 }
 
-/* Card */
+/* Cards */
 
 .card {
   border-radius: 7px;
@@ -331,26 +331,25 @@ a {
 
 .card__header,
 .card__body {
-  padding: 2rem 3rem;
+  padding: 2rem 7%;
 }
 
 .card--primary .card__header {
-  background-color: var(--color-primary);
-  color: var(--color-text);
+  background: var(--color-primary);
+  color: #fff;
 }
 
-.card--secondary {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
+.card--secondary .card__header {
+  background: var(--color-secondary);
+  color: #fff;
 }
 
-.card--primary .card__header {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
+.card--primary .badge--primary {
+  background: #126de4;
 }
 
 .card--secondary .badge--secondary {
-  background-color: #02cdf1;
+  background: #02cdf1;
 }
 
 /* Plans */
