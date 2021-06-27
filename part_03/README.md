@@ -61,3 +61,17 @@ When we are ready to build it for production we run:
 ```bash
 parcel build index.html
 ```
+
+## Deployment
+
+When deploying (for example, with Netlify) make sure to specify the build command.
+
+```bash
+parcel build index.html
+```
+
+Also, specify that the directory to be published is the `dist` directory, since this is the directory with all the minified versions.
+
+## Measuring site performance
+
+To measure site performance you can use [web.dev](https://web.dev/measure/), enter the page's URL, and run an audit.
