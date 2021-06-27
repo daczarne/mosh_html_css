@@ -135,7 +135,6 @@ a {
 .list {
   list-style: none;
   padding-left: 0;
-  color: var(--color-headings);
 }
 
 .list--inline .list__item {
@@ -144,13 +143,14 @@ a {
 }
 
 .list--tick {
+  color: var(--color-headings);
   list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
 }
 
 .list--tick .list__item {
-  padding-left: 0.5rem;
   margin-bottom: 1rem;
+  padding-left: 0.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -202,56 +202,66 @@ a {
   font-size: 1.8rem;
   font-weight: 600;
   margin: 1rem 0;
-  padding: 2rem 3rem;
+  outline: 0;
+  padding: 2rem 4vw;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
+.btn .icon {
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
+  width: 2rem;
+}
+
 .btn--primary {
-  background-color: var(--color-primary);
-  color: var(--color-text);
+  background: var(--color-primary);
+  color: #fff;
 }
 
 .btn--primary:hover {
-  background-color: #3a8ffd;
-  color: var(--color-text);
+  background: #3a8ffd;
 }
 
 .btn--secondary {
-  background-color: var(--color-secondary);
-  color: white;
+  background: var(--color-secondary);
+  color: #fff;
 }
 
 .btn--secondary:hover {
-  background-color: #00c8eb;
-  color: var(--color-text);
+  background: #05cdf0;
 }
 
 .btn--accent {
-  background-color: var(--color-accent);
-  color: var(--color-text);
+  background: var(--color-accent);
+  color: #fff;
 }
 
 .btn--accent:hover {
-  background-color: #ec3000;
-  color: var(--color-text);
-}
-
-.btn--block {
-  width: 100%;
-  display: inline-block;
+  background: #ec3000;
 }
 
 .btn--outline {
-  background-color: var(--color-text);
+  background: #fff;
   border: 2px solid var(--color-headings);
   color: var(--color-headings);
 }
 
 .btn--outline:hover {
-  background-color: var(--color-headings);
-  color: var(--color-text);
+  background: var(--color-headings);
+  color: #fff;
+}
+
+.btn--stretched {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.btn--block {
+  display: inline-block;
+  width: 100%;
 }
 
 @media screen and (min-width: 1024px) {
@@ -276,15 +286,16 @@ a {
 }
 
 .input-group {
-  border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
   display: flex;
 }
 
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
+  width: 0;
 }
 
 .input-group .btn {
@@ -713,5 +724,32 @@ a {
 @media screen and (min-width: 1024px) {
   .hero {
     padding-top: 0;
+  }
+}
+
+/* Domain Block */
+
+.block-domain .input-group {
+  border: 0;
+  box-shadow: 0 0 30px 20px #e6ebee;
+  margin: 4rem auto;
+  max-width: 670px;
+}
+
+.block-domain__prices {
+  color: var(--color-headings);
+  display: grid;
+  font-size: 2rem;
+  font-weight: 600;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
 }
