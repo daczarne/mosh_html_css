@@ -43,8 +43,8 @@ h1,
 h2,
 h3 {
   color: var(--color-headings);
-  margin-bottom: 1rem;
   line-height: 1.1;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -88,9 +88,9 @@ a {
 
 .link-arrow {
   color: var(--color-accent);
-  text-transform: uppercase;
   font-size: 2rem;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .link-arrow::after {
@@ -193,13 +193,13 @@ a {
 }
 
 .icon-container {
+  align-items: center;
   background: #f3f9fa;
-  width: 64px;
-  height: 64px;
   border-radius: 100%;
   display: inline-flex;
+  height: 64px;
   justify-content: center;
-  align-items: center;
+  width: 64px;
 }
 
 .icon-container--accent {
@@ -354,19 +354,23 @@ a {
 
 /* Plans */
 
+.plan {
+  transition: transform 0.2s ease-out;
+}
+
 .plan__name {
-  color: var(--color-text);
+  color: #fff;
   font-size: 2.4rem;
   font-weight: 500;
   margin: 0;
 }
 
 .plan__price {
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 .plan__billing-cycle {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 300;
   margin-right: 1rem;
   opacity: 0.8;
@@ -389,26 +393,34 @@ a {
 
 .plan--popular .card__header::before {
   content: url(../images/popular.svg);
-  width: 40px;
   display: inline-block;
   position: absolute;
-  top: -6px;
   right: 5%;
+  top: -6px;
+  width: 40px;
+}
+
+.plan:hover {
+  transform: scale(1.05);
+}
+
+.plan--popular:hover {
+  transform: scale(1.15);
 }
 
 @media screen and (min-width: 1024px) {
+  .plan--popular {
+    transform: scale(1.1);
+  }
   .plan__name {
     font-size: 1.4rem;
   }
-
   .plan__price {
     font-size: 5rem;
   }
-
   .plan__billing-cycle {
     font-size: 1.6rem;
   }
-
   .plan__description {
     font-size: 1.7rem;
   }
@@ -418,6 +430,7 @@ a {
 
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .media__title {
@@ -438,19 +451,19 @@ a {
   color: var(--color-body-darker);
   font-size: 3rem;
   font-style: italic;
-  line-height: 1.3rem;
+  line-height: 1.3;
 }
 
 .quote__text::before {
   content: open-quote;
 }
 
-.quote_text::after {
+.quote__text::after {
   content: close-quote;
 }
 
 .quote__author {
-  font-size: 3rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 500;
   margin-bottom: 0;
@@ -458,25 +471,23 @@ a {
 
 .quote__organization {
   color: var(--color-headings);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-style: normal;
   opacity: 0.4;
 }
 
 .quote__line {
-  position: relative;
   bottom: 10px;
+  position: relative;
 }
 
 @media screen and (min-width: 1024px) {
   .quote {
     font-size: 2rem;
   }
-
   .quote__author {
     font-size: 2.4rem;
   }
-
   .quote__organization {
     font-size: 1.6rem;
   }
