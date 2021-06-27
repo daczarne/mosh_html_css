@@ -1,9 +1,9 @@
 .DS_Store
 
 # Certificates
-part_1_certificate.pdf
-part_2_certificate.pdf
-part_3_certificate.pdf
+part_01_certificate.pdf
+part_02_certificate.pdf
+part_03_certificate.pdf
 
 # Node modules
 node_modules/
