@@ -693,3 +693,25 @@ a {
     border: 0;
   }
 }
+
+/* Hero (Banner) */
+
+.hero__tagline {
+  color: #b9c3cf;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__content {
+    align-self: center;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-top: 0;
+  }
+}
