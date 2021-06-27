@@ -907,3 +907,9 @@ a {
     font-size: 1.6rem;
   }
 }
+
+/* Sign-up Callout */
+
+.callout-signup {
+  transform: translateY(5rem);
+}
