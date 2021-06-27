@@ -6,6 +6,7 @@
   --color-body: #918ca4;
   --color-body-darker: #5c5577;
   --color-border: #ccc;
+  --color-text: #fff;
   --border-radius: 30px;
 }
 
@@ -112,12 +113,12 @@ a {
 
 .badge--primary {
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-text);
 }
 
 .badge--secondary {
   background-color: var(--color-secondary);
-  color: #fff;
+  color: var(--color-text);
 }
 
 @media screen and (min-width: 1024px) {
@@ -175,7 +176,7 @@ a {
 }
 
 .icon--white {
-  fill: white;
+  fill: var(--color-text);
 }
 
 .icon-container {
@@ -209,32 +210,32 @@ a {
 
 .btn--primary {
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-text);
 }
 
 .btn--primary:hover {
   background-color: #3a8ffd;
-  color: #fff;
+  color: var(--color-text);
 }
 
 .btn--secondary {
   background-color: var(--color-secondary);
-  color: #fff;
+  color: white;
 }
 
 .btn--secondary:hover {
   background-color: #00c8eb;
-  color: #fff;
+  color: var(--color-text);
 }
 
 .btn--accent {
   background-color: var(--color-accent);
-  color: #fff;
+  color: var(--color-text);
 }
 
 .btn--accent:hover {
   background-color: #ec3000;
-  color: #fff;
+  color: var(--color-text);
 }
 
 .btn--block {
@@ -243,14 +244,14 @@ a {
 }
 
 .btn--outline {
-  background-color: #fff;
-  color: var(--color-headings);
+  background-color: var(--color-text);
   border: 2px solid var(--color-headings);
+  color: var(--color-headings);
 }
 
 .btn--outline:hover {
   background-color: var(--color-headings);
-  color: #fff;
+  color: var(--color-text);
 }
 
 @media screen and (min-width: 1024px) {
@@ -311,17 +312,17 @@ a {
 
 .card--primary .card__header {
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-text);
 }
 
 .card--secondary {
   background-color: var(--color-secondary);
-  color: white;
+  color: var(--color-text);
 }
 
 .card--primary .card__header {
   background-color: var(--color-secondary);
-  color: white;
+  color: var(--color-text);
 }
 
 .card--secondary .badge--secondary {
@@ -331,7 +332,7 @@ a {
 /* Plans */
 
 .plan__name {
-  color: white;
+  color: var(--color-text);
   font-size: 2.4rem;
   font-weight: 500;
   margin: 0;
@@ -506,5 +507,45 @@ a {
     font-size: 120%;
     line-height: 1.5;
     margin: 5rem 0 0 6rem;
+  }
+}
+
+/* Call to action (callout) */
+
+.callout {
+  border-radius: 5px;
+  padding: 4rem;
+}
+
+.callout--primary {
+  background: var(--color-primary);
+  color: var(--color-text);
+}
+
+.callout__heading {
+  color: var(--color-text);
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+.callout .btn {
+  align-self: center;
+  justify-self: center;
+}
+
+.callout__content {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .callout .grid--1x2 {
+    grid-template-columns: 1fr auto;
+  }
+  .callout__content {
+    text-align: left;
+  }
+  .callout .btn {
+    justify-self: start;
+    margin: 0 2rem;
   }
 }
