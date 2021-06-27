@@ -119,19 +119,19 @@ a {
   white-space: nowrap;
 }
 
-.badge--small {
-  font-size: 1.6rem;
-  padding: 0.5rem 1.5rem;
-}
-
 .badge--primary {
-  background-color: var(--color-primary);
-  color: var(--color-text);
+  background: var(--color-primary);
+  color: #fff;
 }
 
 .badge--secondary {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.badge--small {
+  font-size: 1.6rem;
+  padding: 0.5rem 1.5rem;
 }
 
 @media screen and (min-width: 1024px) {
