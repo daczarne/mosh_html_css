@@ -1,9 +1,12 @@
-*.Rmd linguist-detectable
+*.gitattributes linguist-detectable
+*.gitignore linguist-detectable
+*.mako linguist-vendored
 *.md linguist-detectable
 *.md linguist-documentation=false
+*.Rmd linguist-detectable
 *.sql linguist-detectable
 *.sql linguist-language=sql
 *.svg linguist-detectable
+*.toml linguist-detectable
 *.yml linguist-detectable
 *.yaml linguist-detectable
-*.mako linguist-vendored
