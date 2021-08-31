@@ -148,7 +148,7 @@ Relational selectors have the advantage of enabling us to write cleaner markup, 
 Pseudo classes are not real classes, but classes that the browser assigns by default. For example, the first child element of any element can be selected with the pseudo-class `:first-child`. All pseudo-classes start with a colon, `:`.
 
 ```css
-article :first-child {
+article:first-child {
   rules: here;
 }
 ```
@@ -156,7 +156,7 @@ article :first-child {
 Another pseudo-class is `:first-of-type`. This will style all first occurrences of every type of element that is a descendent of the `<article>` element.
 
 ```css
-article :first-of-type {
+article:first-of-type {
   rules: here;
 }
 ```
